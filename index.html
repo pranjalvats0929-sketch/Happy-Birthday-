@@ -4,696 +4,1208 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Pallavi ❤️</title>
 
-<title>For Pallavi 💌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@600&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ==========================================
+   HAPPY BIRTHDAY PALLAVI
+   Designed by Pranjal ❤️
+========================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --pink:#F9CBD6;
+    --rose:#F2AFBC;
+    --cream:#F2E0D2;
+    --wine:#9E182B;
+    --text:#4A2F35;
+
+    --glass:rgba(255,255,255,.24);
+    --glass-border:rgba(255,255,255,.42);
+
+    --shadow:
+    0 20px 60px rgba(0,0,0,.12);
+
+    --radius:30px;
+
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    height:100vh;
-    overflow:hidden;
-    background:linear-gradient(-45deg,#F9CBD6,#F2AFBC,#F2E0D2,#F9CBD6);
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    linear-gradient(
+    -45deg,
+    var(--pink),
+    var(--rose),
+    var(--cream),
+    var(--pink));
+
     background-size:400% 400%;
-    animation:bgMove 18s ease infinite;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+    animation:gradientMove 18s ease infinite;
+
+    overflow:hidden;
+
+    height:100vh;
+
+    color:var(--text);
+
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* Animated Background */
+
+@keyframes gradientMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
 }
 
 .background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
+
+position:fixed;
+
+inset:0;
+
+overflow:hidden;
+
+z-index:-5;
+
 }
 
 .blob{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
-    opacity:.5;
-    animation:floatBlob 15s infinite alternate ease-in-out;
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+opacity:.45;
+
+animation:blobFloat 18s ease-in-out infinite alternate;
+
 }
 
 .blob1{
-    width:280px;
-    height:280px;
-    background:#F9CBD6;
-    top:-70px;
-    left:-80px;
+
+width:320px;
+height:320px;
+
+background:var(--pink);
+
+top:-90px;
+left:-80px;
+
 }
 
 .blob2{
-    width:350px;
-    height:350px;
-    background:#F2AFBC;
-    right:-120px;
-    bottom:-100px;
-    animation-duration:20s;
+
+width:360px;
+height:360px;
+
+background:var(--rose);
+
+right:-100px;
+bottom:-120px;
+
+animation-duration:24s;
+
 }
 
 .blob3{
-    width:220px;
-    height:220px;
-    background:#ffffff;
-    left:45%;
-    top:55%;
-    opacity:.25;
-}
 
-@keyframes floatBlob{
-    from{
-        transform:translate(-20px,-20px);
-    }
-    to{
-        transform:translate(40px,40px);
-    }
-}
-
-.lock-screen{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-.time{
-    font-size:64px;
-    font-weight:600;
-    color:#9E182B;
-    font-family:'Cormorant Garamond',serif;
-}
-
-.date{
-    margin-bottom:25px;
-    font-size:18px;
-    color:#6B4C53;
-}
-
-.lock-card{
-    width:370px;
-    max-width:95%;
-    background:rgba(255,255,255,.25);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.4);
-    border-radius:32px;
-    padding:35px 28px;
-    text-align:center;
-    box-shadow:0 15px 50px rgba(0,0,0,.12);
-    animation:appear 1s;
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.lock-icon{
-    font-size:40px;
-    margin-bottom:15px;
-    transition:.5s;
-}
-
-h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:42px;
-    color:#9E182B;
-    margin-bottom:10px;
-}
-
-.lock-card p{
-    font-size:15px;
-    line-height:1.8;
-    color:#4A2F35;
-    margin-bottom:30px;
-}
-
-.pin{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin-bottom:20px;
-}
-
-.dot{
-    width:15px;
-    height:15px;
-    border-radius:50%;
-    border:2px solid #9E182B;
-    background:transparent;
-    transition:.3s;
-}
-
-.dot.fill{
-    background:#9E182B;
-}
-
-.message{
-    height:24px;
-    margin-bottom:25px;
-    font-size:15px;
-    color:#9E182B;
-    font-weight:500;
-}
-
-.keypad{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-}
-
-.keypad button{
-    width:72px;
-    height:72px;
-    margin:auto;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.65);
-    backdrop-filter:blur(10px);
-    font-size:24px;
-    cursor:pointer;
-    transition:.25s;
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
-}
-
-.keypad button:hover{
-    transform:scale(1.08);
-    background:#9E182B;
-    color:#fff;
-}
-
-.empty{
-    visibility:hidden;
-}
-
-.shake{
-    animation:shake .35s;
-}
-
-@keyframes shake{
-    25%{
-        transform:translateX(-8px);
-    }
-    50%{
-        transform:translateX(8px);
-    }
-    75%{
-        transform:translateX(-8px);
-    }
-}
-
-.petal{
-    position:absolute;
-    font-size:20px;
-    animation:fall linear infinite;
-    pointer-events:none;
-    opacity:.8;
-}
-
-@keyframes fall{
-    0%{
-        transform:translateY(-120px) rotate(0deg);
-        opacity:0;
-    }
-
-    20%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
-@media (max-width:430px){
-
-    .lock-card{
-        padding:30px 20px;
-    }
-
-    .time{
-        font-size:52px;
-    }
-
-    .keypad button{
-        width:65px;
-        height:65px;
-        font-size:22px;
-    }
-
-}
-
-  /* ========================= */
-/* ENVELOPE SCREEN */
-/* ========================= */
-
-.envelope-screen{
-    position:fixed;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(15px);
-    z-index:99;
-}
-
-.envelope{
-    width:180px;
-    height:120px;
-    background:#F2AFBC;
-    border-radius:12px;
-    position:relative;
-    overflow:hidden;
-    cursor:pointer;
-    transition:.6s;
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
-}
-
-.envelope:hover{
-    transform:scale(1.05);
-}
-
-.envelope::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    clip-path:polygon(0 0,50% 60%,100% 0);
-    background:#F9CBD6;
-}
-
-.heart-seal{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    font-size:38px;
-    z-index:3;
-}
-
-#openText{
-    margin-top:40px;
-    font-family:'Cormorant Garamond',serif;
-    font-size:38px;
-    color:#9E182B;
-    text-align:center;
-}
-
-/* ========================= */
-/* QUESTION SCREEN */
-/* ========================= */
-
-.question-screen{
-    position:fixed;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:100;
-    padding:20px;
-}
-
-.question-box{
-    width:380px;
-    max-width:95%;
-    padding:40px;
-    border-radius:28px;
-    background:rgba(255,255,255,.28);
-    backdrop-filter:blur(20px);
-    text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.question-box h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:42px;
-    color:#9E182B;
-    margin-bottom:12px;
-}
-
-.question-box p{
-    color:#4A2F35;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.buttons{
-    position:relative;
-    width:100%;
-    height:180px;
-}
-
-#yesBtn,
-#noBtn{
-    position:absolute;
-    padding:14px 24px;
-    border:none;
-    border-radius:40px;
-    font-size:16px;
-    font-family:'Poppins',sans-serif;
-    cursor:pointer;
-    transition:.3s ease;
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-
-#yesBtn{
-    left:25px;
-    bottom:20px;
-    background:#9E182B;
-    color:#fff;
-}
-
-#yesBtn:hover{
-    transform:scale(1.08);
-}
-
-#noBtn{
-    right:25px;
-    bottom:20px;
-    background:#fff;
-    color:#4A2F35;
-}
-
-#funnyText{
-    margin-top:20px;
-    min-height:28px;
-    color:#9E182B;
-    font-weight:500;
-    font-size:15px;
-    transition:.3s;
-}
-
-  /* ========================= */
-/* BOOK SCREEN */
-/* ========================= */
-
-.book-screen{
-    position:fixed;
-    inset:0;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#F2E0D2,#F9CBD6);
-    z-index:150;
-    padding:25px;
-    overflow:auto;
-}
-
-.book-page{
-    width:100%;
-    max-width:720px;
-    background:#FFFDF8;
-    border-radius:20px;
-    padding:50px;
-    box-shadow:0 20px 60px rgba(0,0,0,.15);
-    position:relative;
-    animation:pageAppear .8s ease;
-}
-
-.book-page::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:42px;
-    width:2px;
-    height:100%;
-    background:rgba(158,24,43,.15);
-}
-
-@keyframes pageAppear{
-    from{
-        opacity:0;
-        transform:perspective(1000px) rotateY(-20deg) scale(.96);
-    }
-    to{
-        opacity:1;
-        transform:perspective(1000px) rotateY(0deg) scale(1);
-    }
-}
-
-.chapter{
-    text-transform:uppercase;
-    letter-spacing:4px;
-    color:#9E182B;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.book-title{
-    font-family:'Cormorant Garamond',serif;
-    font-size:52px;
-    color:#9E182B;
-    margin-bottom:30px;
-}
-
-.book-text{
-    font-size:18px;
-    line-height:2;
-    color:#4A2F35;
-}
-
-.book-text br{
-    line-height:2.4;
-}
-
-#nextChapter{
-    margin-top:45px;
-    padding:15px 34px;
-    border:none;
-    border-radius:50px;
-    background:#9E182B;
-    color:#fff;
-    font-size:16px;
-    font-family:'Poppins',sans-serif;
-    cursor:pointer;
-    transition:.3s ease;
-    box-shadow:0 10px 25px rgba(158,24,43,.25);
-}
-
-#nextChapter:hover{
-    transform:translateY(-3px) scale(1.05);
-    box-shadow:0 15px 35px rgba(158,24,43,.35);
-}
-
-#nextChapter:active{
-    transform:scale(.98);
-}
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#F2E0D2;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#F2AFBC;
-    border-radius:10px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#9E182B;
-}
-
-@media (max-width:768px){
-
-    .book-page{
-        padding:35px 28px;
-    }
-
-    .book-title{
-        font-size:40px;
-    }
-
-    .book-text{
-        font-size:16px;
-        line-height:1.9;
-    }
-
-    #nextChapter{
-        width:100%;
-    }
-
-}
-
-@media (max-width:430px){
-
-    .book-screen{
-        padding:15px;
-    }
-
-    .book-page{
-        padding:28px 22px;
-        border-radius:16px;
-    }
-
-    .book-title{
-        font-size:34px;
-    }
-
-    .chapter{
-        font-size:11px;
-        letter-spacing:3px;
-    }
-
-    .book-text{
-        font-size:15px;
-    }
-
-}
-
-/* CHAPTER 2 */
-
-.chapter2-screen{
-
-display:none;
-position:fixed;
-inset:0;
-overflow:auto;
-padding:50px 20px;
-background:linear-gradient(135deg,#F9CBD6,#F2E0D2);
-
-}
-
-.chapter2-title{
-
-text-align:center;
-font-family:"Cormorant Garamond";
-font-size:52px;
-color:#9E182B;
-margin-bottom:45px;
-
-}
-
-.notes{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:25px;
-
-max-width:1100px;
-margin:auto;
-
-}
-
-.note{
+width:240px;
+height:240px;
 
 background:white;
 
-padding:22px;
+opacity:.18;
 
-border-radius:18px;
+left:42%;
+top:50%;
 
-box-shadow:0 10px 30px rgba(0,0,0,.12);
+animation-duration:30s;
 
-font-size:17px;
+}
 
-line-height:1.7;
+@keyframes blobFloat{
 
-transition:.35s;
+from{
+
+transform:
+translate(-20px,-20px)
+scale(1);
+
+}
+
+to{
+
+transform:
+translate(40px,35px)
+scale(1.1);
+
+}
+
+}
+
+/* Floating Flowers */
+
+.petal{
+
+position:absolute;
+
+top:-80px;
+
+font-size:22px;
+
+pointer-events:none;
+
+opacity:0;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:
+translateY(-80px)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* Reusable Glass */
+
+.glass{
+
+background:var(--glass);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid var(--glass-border);
+
+border-radius:var(--radius);
+
+box-shadow:var(--shadow);
+
+}
+
+/* Every Full Screen */
+
+.screen{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:20px;
+
+transition:.7s ease;
+
+}
+
+/* Common Title */
+
+.title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(42px,7vw,62px);
+
+color:var(--wine);
+
+}
+
+/* Common Text */
+
+.subtitle{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:var(--text);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.title{
+
+font-size:46px;
+
+}
+
+.subtitle{
+
+font-size:15px;
+
+}
+
+}
+
+    /* =====================================================
+   LOCK SCREEN
+===================================================== */
+
+.lock-screen{
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+height:100vh;
+
+padding:20px;
+
+}
+
+/* CLOCK */
+
+.clock{
+
+text-align:center;
+
+margin-bottom:42px;
+
+animation:fadeDown 1s ease;
+
+}
+
+.time{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:76px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:var(--wine);
+
+text-shadow:
+
+0 8px 20px rgba(158,24,43,.12);
+
+}
+
+.date{
+
+margin-top:8px;
+
+font-size:18px;
+
+font-weight:500;
+
+color:#6B4C53;
+
+}
+
+/* CARD */
+
+.lock-card{
+
+width:390px;
+
+max-width:95%;
+
+padding:38px 30px;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .9s ease;
+
+}
+
+/* Shine */
+
+.lock-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-140%;
+
+width:80%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent);
+
+transform:skewX(-20deg);
+
+animation:shine 5s infinite;
+
+}
+
+@keyframes shine{
+
+100%{
+
+left:170%;
+
+}
+
+}
+
+/* LOCK */
+
+.lock-icon{
+
+font-size:54px;
+
+margin-bottom:18px;
+
+animation:lockFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes lockFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* TEXT */
+
+.lock-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:52px;
+
+color:var(--wine);
+
+margin-bottom:15px;
+
+}
+
+.lock-text{
+
+font-size:15px;
+
+line-height:1.9;
+
+color:var(--text);
+
+margin-bottom:34px;
+
+}
+
+/* SWIPE */
+
+.swipe-box{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:14px;
 
 cursor:pointer;
 
-transform:rotate(calc(-3deg + 6deg * var(--r)));
+user-select:none;
 
 }
 
-.note:hover{
+.swipe-track{
 
-transform:scale(1.08) rotate(0deg);
+width:210px;
+
+height:58px;
+
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.58);
+
+position:relative;
+
+overflow:hidden;
 
 }
 
-</style>
+.swipe-thumb{
+
+position:absolute;
+
+top:8px;
+
+left:8px;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:var(--wine);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:18px;
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 20px rgba(158,24,43,.25);
+
+}
+
+.swipe-label{
+
+font-size:15px;
+
+font-weight:500;
+
+color:var(--wine);
+
+}
+
+.swipe-hint{
+
+font-size:13px;
+
+color:#7B5D63;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+opacity:.45;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* PIN SCREEN */
+
+.pin-card{
+
+width:390px;
+
+max-width:95%;
+
+padding:35px 28px;
+
+text-align:center;
+
+}
+
+.pin-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:46px;
+
+color:var(--wine);
+
+margin-bottom:12px;
+
+}
+
+.pin-text{
+
+font-size:15px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+color:var(--text);
+
+}
+
+/* PIN DOTS */
+
+.pin-dots{
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+margin-bottom:24px;
+
+}
+
+.dot{
+
+width:16px;
+
+height:16px;
+
+border-radius:50%;
+
+border:2px solid var(--wine);
+
+transition:.25s;
+
+}
+
+.dot.active{
+
+background:var(--wine);
+
+transform:scale(1.15);
+
+}
+
+/* MESSAGE */
+
+.pin-message{
+
+height:24px;
+
+font-size:15px;
+
+font-weight:500;
+
+color:var(--wine);
+
+margin-bottom:22px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.time{
+
+font-size:60px;
+
+}
+
+.lock-title{
+
+font-size:42px;
+
+}
+
+.pin-title{
+
+font-size:38px;
+
+}
+
+.lock-card,
+.pin-card{
+
+padding:28px 22px;
+
+}
+
+.swipe-track{
+
+width:180px;
+
+}
+
+}
+
+    /* =====================================================
+   MODULE 1A-3
+   KEYPAD • AUTHENTICATION • UTILITIES
+   (Continue inside the same <style> tag)
+===================================================== */
+
+/* ==========================
+   KEYPAD
+========================== */
+
+.keypad{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:16px;
+
+margin-top:10px;
+
+}
+
+.key{
+
+width:74px;
+
+height:74px;
+
+margin:auto;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+border-radius:50%;
+
+font-family:"Poppins",sans-serif;
+
+font-size:24px;
+
+font-weight:500;
+
+color:var(--wine);
+
+background:rgba(255,255,255,.65);
+
+backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.08);
+
+transition:.25s;
+
+}
+
+.key:hover{
+
+transform:translateY(-4px);
+
+background:var(--wine);
+
+color:white;
+
+}
+
+.key:active{
+
+transform:scale(.95);
+
+}
+
+.key.empty{
+
+visibility:hidden;
+
+pointer-events:none;
+
+}
+
+/* ==========================
+   WRONG PIN SHAKE
+========================== */
+
+.shake{
+
+animation:shake .45s;
+
+}
+
+@keyframes shake{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+20%{
+
+transform:translateX(-10px);
+
+}
+
+40%{
+
+transform:translateX(10px);
+
+}
+
+60%{
+
+transform:translateX(-8px);
+
+}
+
+80%{
+
+transform:translateX(8px);
+
+}
+
+100%{
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ==========================
+   AUTHENTICATING SCREEN
+========================== */
+
+.auth-screen{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+z-index:999;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.45s;
+
+}
+
+.auth-screen.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+.spinner{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+border:5px solid rgba(255,255,255,.35);
+
+border-top:5px solid var(--wine);
+
+animation:spin 1s linear infinite;
+
+margin-bottom:25px;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.auth-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+color:var(--wine);
+
+margin-bottom:10px;
+
+}
+
+.auth-text{
+
+font-size:15px;
+
+color:var(--text);
+
+}
+
+/* ==========================
+   TRANSITIONS
+========================== */
+
+.fade-out{
+
+opacity:0;
+
+transform:scale(1.05);
+
+pointer-events:none;
+
+transition:.7s;
+
+}
+
+.fade-in{
+
+opacity:1;
+
+transform:scale(1);
+
+transition:.7s;
+
+}
+
+.hidden{
+
+display:none !important;
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--rose);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--wine);
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:480px){
+
+.key{
+
+width:66px;
+
+height:66px;
+
+font-size:22px;
+
+}
+
+.keypad{
+
+gap:14px;
+
+}
+
+.auth-title{
+
+font-size:34px;
+
+}
+
+.auth-text{
+
+font-size:14px;
+
+}
+
+}
+
+    </style>
 
 </head>
 
 <body>
 
-<!-- Floating Background -->
+<!-- ==========================================
+     ANIMATED BACKGROUND
+========================================== -->
+
 <div class="background">
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
 
-<div class="petals" id="petals"></div>
+    <div id="petals"></div>
 
 </div>
 
-<!-- Lock Screen -->
+<!-- ==========================================
+     LOCK SCREEN
+========================================== -->
 
-<section class="lock-screen">
+<section
+class="screen lock-screen"
+id="lockScreen">
 
-<div class="time" id="time">
-12:00
+    <!-- Live Clock -->
+
+    <div class="clock">
+
+        <div
+        class="time"
+        id="time">
+
+            00:00
+
+        </div>
+
+        <div
+        class="date"
+        id="date">
+
+            Tuesday, 8 July
+
+        </div>
+
+    </div>
+
+    <!-- Lock Card -->
+
+    <div class="glass lock-card">
+
+        <div
+        class="lock-icon"
+        id="lockIcon">
+
+            🔒
+
+        </div>
+
+        <h1 class="lock-title">
+
+            Dear Pallavi,
+
+        </h1>
+
+        <p class="lock-text">
+
+            Some gifts are wrapped with ribbons.
+
+            <br><br>
+
+            This one is wrapped with memories,
+            smiles,
+            and a little surprise made only for you.
+
+            <br><br>
+
+            Swipe to begin your birthday story.
+
+            🌸
+
+        </p>
+
+        <!-- Swipe -->
+
+        <div
+        class="swipe-box"
+        id="swipeBox">
+
+            <div class="swipe-track">
+
+                <div
+                class="swipe-thumb"
+                id="swipeThumb">
+
+                    ➜
+
+                </div>
+
+            </div>
+
+            <div class="swipe-label">
+
+                Swipe to Unlock
+
+            </div>
+
+            <div class="swipe-hint">
+
+                Your birthday surprise awaits ✨
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     PIN SCREEN
+========================================== -->
+
+<section
+class="screen hidden"
+id="pinScreen">
+
+<div class="glass pin-card">
+
+<div
+class="lock-icon"
+id="pinLock">
+
+🔐
+
 </div>
 
-<div class="date" id="date">
-Tuesday, 8 July
-</div>
+<h2 class="pin-title">
 
-<div class="lock-card">
+Enter Your Birthday
 
-<div class="lock-icon" id="lockIcon">
-🔒
-</div>
+</h2>
 
-<h1>
+<p class="pin-text">
 
-Dear Pallavi,
+Only the birthday girl knows the password.
 
-</h1>
+<br>
 
-<p>
-
-Some doors are opened with keys.
-
-This one opens with your birthday. 🌷
+(Hint: DDMMYYYY 🎂)
 
 </p>
 
-<div class="pin">
+<!-- PIN DOTS -->
+
+<div
+class="pin-dots"
+id="pinDots">
 
 <div class="dot"></div>
 <div class="dot"></div>
@@ -708,472 +1220,432 @@ This one opens with your birthday. 🌷
 </div>
 
 <div
-class="message"
-id="message">
+class="pin-message"
+id="pinMessage">
 
-Only the birthday girl may enter. 💕
+Only Pallavi may enter 💕
 
 </div>
+
+<!-- Keypad starts below -->
+
+    <!-- ==========================================
+     KEYPAD
+========================================== -->
 
 <div class="keypad">
 
-<button onclick="press('1')">
-1
-</button>
+    <button class="key" data-key="1">1</button>
+    <button class="key" data-key="2">2</button>
+    <button class="key" data-key="3">3</button>
 
-<button onclick="press('2')">
-2
-</button>
+    <button class="key" data-key="4">4</button>
+    <button class="key" data-key="5">5</button>
+    <button class="key" data-key="6">6</button>
 
-<button onclick="press('3')">
-3
-</button>
+    <button class="key" data-key="7">7</button>
+    <button class="key" data-key="8">8</button>
+    <button class="key" data-key="9">9</button>
 
-<button onclick="press('4')">
-4
-</button>
+    <button class="key empty"></button>
 
-<button onclick="press('5')">
-5
-</button>
+    <button class="key" data-key="0">0</button>
 
-<button onclick="press('6')">
-6
-</button>
+    <button
+    class="key"
+    id="backspace">
 
-<button onclick="press('7')">
-7
-</button>
+        ⌫
 
-<button onclick="press('8')">
-8
-</button>
-
-<button onclick="press('9')">
-9
-</button>
-
-<button class="empty">
-</button>
-
-<button onclick="press('0')">
-0
-</button>
-
-<button onclick="erase()">
-⌫
-</button>
+    </button>
 
 </div>
 
 </div>
 
 </section>
-<!-- ========================= -->
-<!-- ENVELOPE SCREEN -->
-<!-- ========================= -->
 
-<section class="envelope-screen" id="envelopeScreen">
+<!-- ==========================================
+     AUTHENTICATING SCREEN
+========================================== -->
 
-<div class="envelope" id="envelope">
+<section
 
-<div class="heart-seal">
-💌
-</div>
+class="auth-screen"
 
-</div>
+id="authScreen">
 
-<h2 id="openText">
+<div class="spinner"></div>
 
-Tap the envelope...
+<h2 class="auth-title">
+
+Authenticating...
 
 </h2>
 
-</section>
+<p class="auth-text">
 
-
-<!-- QUESTION SCREEN -->
-
-<section class="question-screen" id="questionScreen">
-
-<div class="question-box">
-
-<h2>
-
-Before we begin...
-
-</h2>
-
-<p>
-
-Ready to open the book written just for you? 📖
+Checking birthday credentials 💕
 
 </p>
 
-<div class="buttons">
-
-<button id="yesBtn">
-
-Open the Book 🌸
-
-</button>
-
-<button id="noBtn">
-
-Not Yet 🙈
-
-</button>
-
-</div>
-
-<p id="funnyText">
-
-</p>
-
-</div>
-
 </section>
 
-  <!-- ========================= -->
-<!-- BOOK PAGE -->
-<!-- ========================= -->
+<!-- ==========================================
+     NEXT MODULE PLACEHOLDER
+========================================== -->
 
-<section class="book-screen" id="bookScreen">
+<div
 
-<div class="book-page">
+id="nextModule"
 
-<p class="chapter">
-Chapter One
-</p>
+style="display:none;">
 
-<h1 class="book-title">
-To Pallavi,
-</h1>
-
-<p class="book-text">
-
-Some people walk into our lives quietly.
-
-No grand entrance.
-
-No dramatic movie scene.
-
-Just a simple conversation...
-
-that somehow stays.
-
-<br><br>
-
-This isn't just a birthday website.
-
-It's a tiny book of memories,
-
-words,
-
-and feelings
-
-I wanted you to keep.
-
-<br><br>
-
-So...
-
-take a deep breath,
-
-turn the page,
-
-and let the story begin. 🌷
-
-</p>
-
-<button id="nextChapter">
-
-Turn the Page →
-    
-
-</button>
+<!--
+Module 2 (Envelope Screen)
+will be inserted here.
+-->
 
 </div>
-
-</section>
-    <!-- ========================= -->
-<!-- CHAPTER 2 -->
-<!-- ========================= -->
-
-<section class="chapter2-screen" id="chapter2">
-
-<h2 class="chapter2-title">
-18 Things I Admire About You ✨
-</h2>
-
-<div class="notes">
-
-<div class="note">📚 Your love for books.</div>
-
-<div class="note">🤍 Your calm personality.</div>
-
-<div class="note">💼 Future Boss Lady energy.</div>
-
-<div class="note">😂 Your dry humour.</div>
-
-<div class="note">🌸 The way you stay genuine.</div>
-
-<div class="note">☕ Coffee + books = Pallavi.</div>
-
-<div class="note">🎬 Your comfort movies.</div>
-
-<div class="note">🌧 Your peaceful vibe.</div>
-
-<div class="note">💪 Quiet confidence.</div>
-
-<div class="note">📖 The stories you'll write.</div>
-
-<div class="note">🌍 Your big dreams.</div>
-
-<div class="note">😊 Your smile.</div>
-
-<div class="note">✨ The way you inspire people.</div>
-
-<div class="note">🌷 Your kindness.</div>
-
-<div class="note">🎀 Your simplicity.</div>
-
-<div class="note">📚 Commerce queen.</div>
-
-<div class="note">💖 An amazing friend.</div>
-
-<div class="note">🎂 And today... you're officially 18!</div>
-
-</div>
-
-</section>
-    
-    
-<script>
 
 <script>
+/* ==========================================
+   MODULE 1C-1
+   LIVE CLOCK + PETALS + SWIPE + PIN INPUT
+========================================== */
 
-const correctPin = "08072008";
+const CORRECT_PIN = "08072008";
+
 let enteredPin = "";
 
-const dots = document.querySelectorAll(".dot");
-const message = document.getElementById("message");
-const lockIcon = document.getElementById("lockIcon");
+/* ---------- ELEMENTS ---------- */
 
-const wrongMessages = [
-"That's not your birthday, pretty girl 🤨",
-"Hint: It's a very special day... 🎂",
-"Nope... try again 🌷",
-"Are you secretly testing me? 😭",
-"Only Pallavi can unlock this little world 💌"
-];
+const lockScreen = document.getElementById("lockScreen");
+const pinScreen = document.getElementById("pinScreen");
 
-function updateDots(){
-    dots.forEach((dot,index)=>{
-        if(index<enteredPin.length){
-            dot.classList.add("fill");
-        }else{
-            dot.classList.remove("fill");
-        }
-    });
-}
+const swipeThumb = document.getElementById("swipeThumb");
+const swipeBox = document.getElementById("swipeBox");
 
-function press(num){
-    if(enteredPin.length>=8) return;
+const pinDots = document.querySelectorAll(".dot");
+const pinMessage = document.getElementById("pinMessage");
 
-    enteredPin+=num;
-    updateDots();
+const authScreen = document.getElementById("authScreen");
 
-    if(enteredPin.length===8){
-        setTimeout(checkPin,250);
-    }
-}
+const keypadButtons = document.querySelectorAll(".key[data-key]");
 
-function erase(){
-    enteredPin=enteredPin.slice(0,-1);
-    updateDots();
-}
+const backspace = document.getElementById("backspace");
 
-function checkPin(){
-
-    if(enteredPin===correctPin){
-
-        message.innerHTML="Welcome, birthday girl! 🌸";
-        lockIcon.innerHTML="🔓";
-        lockIcon.style.transform="scale(1.2) rotate(-10deg)";
-
-        setTimeout(()=>{
-            document.body.style.transition="1s";
-            document.body.style.opacity="0";
-
-            setTimeout(()=>{
-                showEnvelope();
-            },1000);
-
-        },800);
-
-    }else{
-
-        document.querySelector(".lock-card").classList.add("shake");
-
-        message.innerHTML=
-        wrongMessages[Math.floor(Math.random()*wrongMessages.length)];
-
-        enteredPin="";
-        updateDots();
-
-        setTimeout(()=>{
-            document.querySelector(".lock-card").classList.remove("shake");
-        },400);
-
-    }
-}
-
-// CLOCK
+/* ---------- LIVE CLOCK ---------- */
 
 function updateClock(){
 
-    const now=new Date();
+const now = new Date();
 
-    let h=now.getHours();
-    let m=now.getMinutes();
+let hours = now.getHours();
+let minutes = now.getMinutes();
 
-    h=h<10?"0"+h:h;
-    m=m<10?"0"+m:m;
+hours = hours < 10 ? "0"+hours : hours;
+minutes = minutes < 10 ? "0"+minutes : minutes;
 
-    document.getElementById("time").innerHTML=h+":"+m;
+document.getElementById("time").textContent =
+hours + ":" + minutes;
 
-    const options={
-        weekday:"long",
-        day:"numeric",
-        month:"long"
-    };
+const options = {
 
-    document.getElementById("date").innerHTML=
-    now.toLocaleDateString("en-US",options);
+weekday:"long",
+
+day:"numeric",
+
+month:"long"
+
+};
+
+document.getElementById("date").textContent =
+now.toLocaleDateString("en-US",options);
+
 }
 
 updateClock();
+
 setInterval(updateClock,1000);
 
-// PETALS
+/* ---------- FALLING FLOWERS ---------- */
 
-const petals=document.getElementById("petals");
-const icons=["🌸","🤍","💮"];
+const petalsContainer =
+document.getElementById("petals");
+
+const flowers = [
+
+"🌸",
+"🤍",
+"💮"
+
+];
 
 function createPetal(){
 
-    const petal=document.createElement("div");
+const petal =
+document.createElement("div");
 
-    petal.className="petal";
-    petal.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+petal.className = "petal";
 
-    petal.style.left=Math.random()*100+"vw";
-    petal.style.animationDuration=(6+Math.random()*6)+"s";
-    petal.style.fontSize=(18+Math.random()*14)+"px";
+petal.innerHTML =
+flowers[
+Math.floor(Math.random()*flowers.length)
+];
 
-    petals.appendChild(petal);
+petal.style.left =
+Math.random()*100 + "vw";
 
-    setTimeout(()=>{
-        petal.remove();
-    },12000);
+petal.style.fontSize =
+(18 + Math.random()*12) + "px";
+
+petal.style.animationDuration =
+(6 + Math.random()*6) + "s";
+
+petalsContainer.appendChild(petal);
+
+setTimeout(()=>{
+
+petal.remove();
+
+},12000);
 
 }
 
 setInterval(createPetal,500);
 
-// SHOW ENVELOPE
+/* ---------- SWIPE ---------- */
 
-function showEnvelope(){
+let unlocked = false;
 
-    document.querySelector(".lock-screen").style.display="none";
+swipeBox.addEventListener("click",()=>{
 
-    document.body.style.opacity="1";
+if(unlocked) return;
 
-    document.getElementById("envelopeScreen").style.display="flex";
+unlocked = true;
 
-}
+swipeThumb.style.left = "160px";
 
-// ENVELOPE CLICK
+setTimeout(()=>{
 
-document.getElementById("envelope").onclick=function(){
+lockScreen.classList.add("fade-out");
 
-    document.getElementById("openText").innerHTML="Opening... 💌";
+setTimeout(()=>{
 
-    this.style.transform="scale(1.2) rotate(-8deg)";
+lockScreen.style.display = "none";
 
-    setTimeout(()=>{
+pinScreen.classList.remove("hidden");
 
-        document.getElementById("envelopeScreen").style.display="none";
+pinScreen.style.display = "flex";
 
-        document.getElementById("questionScreen").style.display="flex";
+},650);
 
-    },900);
-
-};
-
-// RUNNING NO BUTTON
-
-const no=document.getElementById("noBtn");
-const funny=document.getElementById("funnyText");
-
-const msgs=[
-"Are you sure pretty girl? 🥺",
-"I spent days making this 😭",
-"Books don't end on page one 📚",
-"Come on... just one click 🌸",
-"Okay now you're bullying me 😂",
-"I'm faster than you 😎"
-];
-
-let i=0;
-
-no.addEventListener("mouseover",()=>{
-
-    no.style.left=Math.random()*220+"px";
-    no.style.top=Math.random()*100+"px";
-
-    funny.innerHTML=msgs[i%msgs.length];
-
-    i++;
+},350);
 
 });
 
-// SHOW BOOK
+/* ---------- PIN DOTS ---------- */
 
-function showBook(){
+function updateDots(){
 
-    document.getElementById("questionScreen").style.display="none";
+pinDots.forEach((dot,index)=>{
 
-    document.getElementById("bookScreen").style.display="flex";
+if(index < enteredPin.length){
+
+dot.classList.add("active");
+
+}else{
+
+dot.classList.remove("active");
 
 }
 
-// YES BUTTON
+});
 
-document.getElementById("yesBtn").onclick=function(){
+}
 
-    funny.innerHTML="I knew you'd choose this. 💕";
+/* ---------- KEYPAD ---------- */
 
-    setTimeout(()=>{
-        showBook();
-    },1000);
+keypadButtons.forEach(button=>{
 
-};
+button.addEventListener("click",()=>{
 
-// NEXT CHAPTER
+if(enteredPin.length >= 8) return;
 
-document.getElementById("nextChapter").onclick=function(){
+enteredPin += button.dataset.key;
 
-    document.getElementById("bookScreen").style.display="none";
+updateDots();
 
-    document.getElementById("chapter2").style.display="flex";
+if(enteredPin.length === 8){
 
-};
+setTimeout(checkPin,250);
 
-</script>
+}
 
+});
+
+});
+
+/* ---------- BACKSPACE ---------- */
+
+backspace.addEventListener("click",()=>{
+
+enteredPin =
+enteredPin.slice(0,-1);
+
+updateDots();
+
+});
+  /* ==========================================
+   MODULE 1C-2
+   PIN CHECK • AUTHENTICATION • TRANSITION
+========================================== */
+
+const funnyMessages = [
+
+"That's not your birthday, pretty girl 🤨",
+
+"Hint: It's a very special day... 🎂",
+
+"Nope... try again 🌷",
+
+"Are you secretly testing me? 😭",
+
+"Only Pallavi can unlock this little world 💌",
+
+"So close... or maybe not 😂"
+
+];
+
+/* ---------- CHECK PIN ---------- */
+
+function checkPin(){
+
+if(enteredPin === CORRECT_PIN){
+
+pinMessage.innerHTML =
+"Welcome, birthday girl! 🌸";
+
+document.getElementById("pinLock").innerHTML = "🔓";
+
+setTimeout(()=>{
+
+pinScreen.classList.add("fade-out");
+
+authScreen.classList.add("show");
+
+setTimeout(()=>{
+
+authScreen.classList.remove("show");
+
+/*
+==========================================
+MODULE 2 STARTS HERE
+==========================================
+
+For now we'll simply show an alert.
+Later this will open the envelope.
+*/
+
+alert("🎉 Module 1 Complete!\n\nNext: The Envelope 💌");
+
+/* Hide authentication */
+
+authScreen.style.display="none";
+
+},2200);
+
+},700);
+
+}else{
+
+document.querySelector(".pin-card")
+.classList.add("shake");
+
+pinMessage.innerHTML =
+funnyMessages[
+Math.floor(Math.random()*funnyMessages.length)
+];
+
+enteredPin = "";
+
+updateDots();
+
+setTimeout(()=>{
+
+document.querySelector(".pin-card")
+.classList.remove("shake");
+
+},500);
+
+}
+
+}
+
+/* ---------- KEYBOARD SUPPORT ---------- */
+
+document.addEventListener("keydown",(e)=>{
+
+if(pinScreen.style.display!=="flex") return;
+
+if(e.key>="0" && e.key<="9"){
+
+if(enteredPin.length<8){
+
+enteredPin+=e.key;
+
+updateDots();
+
+if(enteredPin.length===8){
+
+setTimeout(checkPin,250);
+
+}
+
+}
+
+}
+
+if(e.key==="Backspace"){
+
+enteredPin=enteredPin.slice(0,-1);
+
+updateDots();
+
+}
+
+});
+
+/* ---------- PREVENT DRAG ---------- */
+
+document.addEventListener("dragstart",(e)=>{
+
+e.preventDefault();
+
+});
+
+/* ---------- PREVENT DOUBLE TAP ZOOM ---------- */
+
+let lastTouchEnd = 0;
+
+document.addEventListener("touchend",(event)=>{
+
+const now = new Date().getTime();
+
+if(now-lastTouchEnd<=300){
+
+event.preventDefault();
+
+}
+
+lastTouchEnd=now;
+
+},{passive:false});  
+
+    </script>
 
 </body>
 
 </html>
+    
