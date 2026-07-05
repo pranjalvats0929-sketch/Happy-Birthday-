@@ -773,6 +773,71 @@ Not Yet 🙈
 </div>
 
 </section>
+
+  <!-- ========================= -->
+<!-- BOOK PAGE -->
+<!-- ========================= -->
+
+<section class="book-screen" id="bookScreen">
+
+<div class="book-page">
+
+<p class="chapter">
+Chapter One
+</p>
+
+<h1 class="book-title">
+To Pallavi,
+</h1>
+
+<p class="book-text">
+
+Some people walk into our lives quietly.
+
+No grand entrance.
+
+No dramatic movie scene.
+
+Just a simple conversation...
+
+that somehow stays.
+
+<br><br>
+
+This isn't just a birthday website.
+
+It's a tiny book of memories,
+
+words,
+
+and feelings
+
+I wanted you to keep.
+
+<br><br>
+
+So...
+
+take a deep breath,
+
+turn the page,
+
+and let the story begin. 🌷
+
+</p>
+
+<button id="nextChapter">
+
+Turn the Page →
+    
+
+</button>
+
+</div>
+
+</section>
+    
+    
 <script>
 
 
@@ -1031,69 +1096,20 @@ showBook();
 },1000);
 
 }
-  <!-- ========================= -->
-<!-- BOOK PAGE -->
-<!-- ========================= -->
 
-<section class="book-screen" id="bookScreen">
+function showBook(){
 
-<div class="book-page">
+    document.getElementById("questionScreen").style.display="none";
+    document.getElementById("bookScreen").style.display="flex";
 
-<p class="chapter">
-Chapter One
-</p>
+}
 
-<h1 class="book-title">
-To Pallavi,
-</h1>
+document.getElementById("nextChapter").onclick=function(){
 
-<p class="book-text">
+    alert("📖 Chapter 2 begins here!");
 
-Some people walk into our lives quietly.
-
-No grand entrance.
-
-No dramatic movie scene.
-
-Just a simple conversation...
-
-that somehow stays.
-
-<br><br>
-
-This isn't just a birthday website.
-
-It's a tiny book of memories,
-
-words,
-
-and feelings
-
-I wanted you to keep.
-
-<br><br>
-
-So...
-
-take a deep breath,
-
-turn the page,
-
-and let the story begin. 🌷
-
-</p>
-
-<button id="nextChapter">
-
-Turn the Page →
+}
     
-
-</button>
-
-</div>
-
-</section>
-
 </script>
 
 </body>
