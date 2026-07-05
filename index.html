@@ -951,9 +951,9 @@ Turn the Page →
     
 <script>
 
+<script>
 
 const correctPin = "08072008";
-
 let enteredPin = "";
 
 const dots = document.querySelectorAll(".dot");
@@ -961,262 +961,218 @@ const message = document.getElementById("message");
 const lockIcon = document.getElementById("lockIcon");
 
 const wrongMessages = [
-
 "That's not your birthday, pretty girl 🤨",
-
 "Hint: It's a very special day... 🎂",
-
 "Nope... try again 🌷",
-
 "Are you secretly testing me? 😭",
-
 "Only Pallavi can unlock this little world 💌"
-
 ];
 
 function updateDots(){
-
-dots.forEach((dot,index)=>{
-
-if(index<enteredPin.length){
-
-dot.classList.add("fill");
-
-}
-
-else{
-
-dot.classList.remove("fill");
-
-}
-
-});
-
+    dots.forEach((dot,index)=>{
+        if(index<enteredPin.length){
+            dot.classList.add("fill");
+        }else{
+            dot.classList.remove("fill");
+        }
+    });
 }
 
 function press(num){
+    if(enteredPin.length>=8) return;
 
-if(enteredPin.length>=8)return;
+    enteredPin+=num;
+    updateDots();
 
-enteredPin+=num;
-
-updateDots();
-
-if(enteredPin.length===8){
-
-setTimeout(checkPin,250);
-
-}
-
+    if(enteredPin.length===8){
+        setTimeout(checkPin,250);
+    }
 }
 
 function erase(){
-
-enteredPin=enteredPin.slice(0,-1);
-
-updateDots();
-
+    enteredPin=enteredPin.slice(0,-1);
+    updateDots();
 }
 
 function checkPin(){
 
-if(enteredPin===correctPin){
+    if(enteredPin===correctPin){
 
-message.innerHTML="Welcome, birthday girl! 🌸";
+        message.innerHTML="Welcome, birthday girl! 🌸";
+        lockIcon.innerHTML="🔓";
+        lockIcon.style.transform="scale(1.2) rotate(-10deg)";
 
-lockIcon.innerHTML="🔓";
+        setTimeout(()=>{
+            document.body.style.transition="1s";
+            document.body.style.opacity="0";
 
-lockIcon.style.transform="scale(1.2) rotate(-10deg)";
+            setTimeout(()=>{
+                showEnvelope();
+            },1000);
 
-setTimeout(()=>{
+        },800);
 
-document.body.style.transition="1s";
+    }else{
 
-document.body.style.opacity="0";
+        document.querySelector(".lock-card").classList.add("shake");
 
-setTimeout(()=>{
+        message.innerHTML=
+        wrongMessages[Math.floor(Math.random()*wrongMessages.length)];
 
-showEnvelope();
+        enteredPin="";
+        updateDots();
 
-},1000);
+        setTimeout(()=>{
+            document.querySelector(".lock-card").classList.remove("shake");
+        },400);
 
-},800);
-
+    }
 }
 
-else{
-
-document.querySelector(".lock-card").classList.add("shake");
-
-message.innerHTML=wrongMessages[Math.floor(Math.random()*wrongMessages.length)];
-
-enteredPin="";
-
-updateDots();
-
-setTimeout(()=>{
-
-document.querySelector(".lock-card").classList.remove("shake");
-
-},400);
-
-}
-
-}
-
-// Live Clock
+// CLOCK
 
 function updateClock(){
 
-const now=new Date();
+    const now=new Date();
 
-let h=now.getHours();
+    let h=now.getHours();
+    let m=now.getMinutes();
 
-let m=now.getMinutes();
+    h=h<10?"0"+h:h;
+    m=m<10?"0"+m:m;
 
-h=h<10?"0"+h:h;
+    document.getElementById("time").innerHTML=h+":"+m;
 
-m=m<10?"0"+m:m;
+    const options={
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+    };
 
-document.getElementById("time").innerHTML=h+":"+m;
-
-const options={
-
-weekday:'long',
-
-day:'numeric',
-
-month:'long'
-
-};
-
-document.getElementById("date").innerHTML=
-
-now.toLocaleDateString('en-US',options);
-
+    document.getElementById("date").innerHTML=
+    now.toLocaleDateString("en-US",options);
 }
 
 updateClock();
-
 setInterval(updateClock,1000);
 
-// Floating Petals
+// PETALS
 
 const petals=document.getElementById("petals");
-
 const icons=["🌸","🤍","💮"];
 
 function createPetal(){
 
-const petal=document.createElement("div");
+    const petal=document.createElement("div");
 
-petal.className="petal";
+    petal.className="petal";
+    petal.innerHTML=icons[Math.floor(Math.random()*icons.length)];
 
-petal.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+    petal.style.left=Math.random()*100+"vw";
+    petal.style.animationDuration=(6+Math.random()*6)+"s";
+    petal.style.fontSize=(18+Math.random()*14)+"px";
 
-petal.style.left=Math.random()*100+"vw";
+    petals.appendChild(petal);
 
-petal.style.animationDuration=(6+Math.random()*6)+"s";
-
-petal.style.fontSize=(18+Math.random()*14)+"px";
-
-petals.appendChild(petal);
-
-setTimeout(()=>{
-
-petal.remove();
-
-},12000);
+    setTimeout(()=>{
+        petal.remove();
+    },12000);
 
 }
 
 setInterval(createPetal,500);
 
-  function showEnvelope(){
+// SHOW ENVELOPE
 
-document.querySelector(".lock-screen").style.display="none";
+function showEnvelope(){
 
-document.body.style.opacity="1";
+    document.querySelector(".lock-screen").style.display="none";
 
-document.getElementById("envelopeScreen").style.display="flex";
+    document.body.style.opacity="1";
+
+    document.getElementById("envelopeScreen").style.display="flex";
 
 }
+
+// ENVELOPE CLICK
 
 document.getElementById("envelope").onclick=function(){
 
-document.getElementById("openText").innerHTML="Opening... 💌";
+    document.getElementById("openText").innerHTML="Opening... 💌";
 
-this.style.transform="scale(1.2) rotate(-8deg)";
+    this.style.transform="scale(1.2) rotate(-8deg)";
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-document.getElementById("envelopeScreen").style.display="none";
+        document.getElementById("envelopeScreen").style.display="none";
 
-document.getElementById("questionScreen").style.display="flex";
+        document.getElementById("questionScreen").style.display="flex";
 
-},900);
+    },900);
 
-}
+};
+
+// RUNNING NO BUTTON
 
 const no=document.getElementById("noBtn");
-
 const funny=document.getElementById("funnyText");
 
 const msgs=[
-
 "Are you sure pretty girl? 🥺",
-
 "I spent days making this 😭",
-
 "Books don't end on page one 📚",
-
 "Come on... just one click 🌸",
-
 "Okay now you're bullying me 😂",
-
 "I'm faster than you 😎"
-
 ];
 
 let i=0;
 
 no.addEventListener("mouseover",()=>{
 
-let x=Math.random()*220;
+    no.style.left=Math.random()*220+"px";
+    no.style.top=Math.random()*100+"px";
 
-let y=Math.random()*100;
+    funny.innerHTML=msgs[i%msgs.length];
 
-no.style.left=x+"px";
-
-no.style.top=y+"px";
-
-funny.innerHTML=msgs[i%msgs.length];
-
-i++;
+    i++;
 
 });
 
-document.getElementById("yesBtn").onclick=function(){
+// SHOW BOOK
 
-funny.innerHTML="I knew you'd choose this. 💕";
+function showBook(){
 
-setTimeout(()=>{
+    document.getElementById("questionScreen").style.display="none";
 
-showBook();
-
-},1000);
+    document.getElementById("bookScreen").style.display="flex";
 
 }
+
+// YES BUTTON
+
+document.getElementById("yesBtn").onclick=function(){
+
+    funny.innerHTML="I knew you'd choose this. 💕";
+
+    setTimeout(()=>{
+        showBook();
+    },1000);
+
+};
+
+// NEXT CHAPTER
 
 document.getElementById("nextChapter").onclick=function(){
 
-document.getElementById("bookScreen").style.display="none";
+    document.getElementById("bookScreen").style.display="none";
 
-document.getElementById("chapter2").style.display="block";
+    document.getElementById("chapter2").style.display="flex";
 
-}
-    
+};
+
 </script>
+
 
 </body>
 
