@@ -1643,6 +1643,486 @@ lastTouchEnd=now;
 
 },{passive:false});  
 
+   /* =====================================================
+   MODULE 2
+   ENVELOPE SCREEN
+===================================================== */
+
+.envelope-screen{
+
+position:fixed;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+padding:20px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(14px);
+
+-webkit-backdrop-filter:blur(14px);
+
+z-index:50;
+
+animation:fadeUp .8s ease;
+
+}
+
+.envelope-container{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:35px;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:280px;
+
+height:180px;
+
+cursor:pointer;
+
+transition:.5s ease;
+
+}
+
+.envelope:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* Body */
+
+.envelope-base{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:120px;
+
+background:#F2AFBC;
+
+border-radius:0 0 18px 18px;
+
+box-shadow:
+
+0 18px 35px rgba(0,0,0,.12);
+
+}
+
+/* Top Flap */
+
+.envelope-flap{
+
+position:absolute;
+
+top:0;
+
+width:100%;
+
+height:100px;
+
+background:#F9CBD6;
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:4;
+
+}
+
+/* Letter */
+
+.letter{
+
+position:absolute;
+
+left:50%;
+
+bottom:30px;
+
+transform:translateX(-50%);
+
+width:220px;
+
+height:135px;
+
+background:#FFFDF8;
+
+border-radius:10px;
+
+padding:18px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+font-family:"Caveat",cursive;
+
+font-size:24px;
+
+color:var(--wine);
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.10);
+
+transition:1s;
+
+z-index:2;
+
+}
+
+/* Heart Seal */
+
+.heart-seal{
+
+position:absolute;
+
+left:50%;
+
+top:82px;
+
+transform:translate(-50%,-50%);
+
+width:52px;
+
+height:52px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:24px;
+
+box-shadow:
+
+0 8px 18px rgba(0,0,0,.15);
+
+z-index:10;
+
+animation:heartbeat 1.6s infinite;
+
+cursor:pointer;
+
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+transform:translate(-50%,-50%) scale(1.12);
+
+}
+
+}
+
+/* Open Animation */
+
+.envelope.open .envelope-flap{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter{
+
+bottom:95px;
+
+}
+
+/* Text */
+
+.envelope-title{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+color:var(--wine);
+
+}
+
+.envelope-subtitle{
+
+font-size:16px;
+
+color:var(--text);
+
+text-align:center;
+
+line-height:1.8;
+
+max-width:320px;
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.envelope{
+
+width:240px;
+
+height:160px;
+
+}
+
+.envelope-base{
+
+height:105px;
+
+}
+
+.letter{
+
+width:190px;
+
+height:120px;
+
+font-size:21px;
+
+}
+
+.envelope-title{
+
+font-size:36px;
+
+}
+
+   }
+
+<!-- =====================================================
+     MODULE 2B
+     ENVELOPE SCREEN
+     Paste this ABOVE:
+     <div id="nextModule" ...>
+====================================================== -->
+
+<section
+class="screen envelope-screen"
+id="envelopeScreen">
+
+    <div class="envelope-container">
+
+        <h1 class="envelope-title">
+
+            A Letter For You
+
+        </h1>
+
+        <p class="envelope-subtitle">
+
+            Every story deserves a beautiful beginning.
+
+            <br><br>
+
+            Tap the heart to open your birthday letter. 💌
+
+        </p>
+
+        <div
+        class="envelope"
+        id="envelope">
+
+            <!-- Flap -->
+
+            <div class="envelope-flap"></div>
+
+            <!-- Letter -->
+
+            <div
+            class="letter"
+            id="letter">
+
+                Dear Pallavi,
+
+                <br>
+
+                This one's for you. 🌸
+
+            </div>
+
+            <!-- Base -->
+
+            <div class="envelope-base"></div>
+
+            <!-- Heart Seal -->
+
+            <div
+            class="heart-seal"
+            id="heartSeal">
+
+                ❤️
+
+            </div>
+
+        </div>
+
+        <p
+        id="envelopeHint"
+        style="
+        margin-top:10px;
+        color:var(--wine);
+        font-weight:500;
+        min-height:24px;">
+
+            Tap the heart...
+
+        </p>
+
+    </div>
+
+</section>
+
+   
+/* =====================================================
+   MODULE 2C
+   ENVELOPE LOGIC + TRANSITION FROM MODULE 1
+===================================================== */
+
+/* ---------- UPDATE checkPin IN MODULE 1 ---------- */
+/* Replace ONLY the success part inside checkPin() */
+
+/*
+OLD LINE (remove this):
+alert("🎉 Module 1 Complete!\n\nNext: The Envelope 💌");
+*/
+
+/* NEW SUCCESS FLOW */
+
+function goToEnvelope(){
+
+    setTimeout(()=>{
+
+        authScreen.classList.remove("show");
+
+        authScreen.style.display = "none";
+
+        pinScreen.classList.add("fade-out");
+
+        setTimeout(()=>{
+
+            pinScreen.style.display = "none";
+
+            document.getElementById("envelopeScreen")
+            .style.display = "flex";
+
+        },600);
+
+    },1200);
+
+}
+
+/* ---------- ENVELOPE INTERACTION ---------- */
+
+const envelope = document.getElementById("envelope");
+const heartSeal = document.getElementById("heartSeal");
+const envelopeHint = document.getElementById("envelopeHint");
+
+let envelopeOpened = false;
+
+heartSeal.addEventListener("click",()=>{
+
+    if(envelopeOpened) return;
+
+    envelopeOpened = true;
+
+    envelope.classList.add("open");
+
+    envelopeHint.innerHTML = "Opening your letter... 💌";
+
+    setTimeout(()=>{
+
+        envelopeHint.innerHTML = "A letter written just for you... 🌸";
+
+    },1200);
+
+    setTimeout(()=>{
+
+        // Transition to Chapter 1 (Module 3 placeholder)
+
+        document.getElementById("envelopeScreen")
+        .style.opacity = "0";
+
+        setTimeout(()=>{
+
+            document.getElementById("envelopeScreen")
+            .style.display = "none";
+
+            alert("📖 Next: Chapter One begins...");
+
+        },700);
+
+    },2600);
+
+});
+
+/* ---------- MODIFIED PIN SUCCESS (HOOK) ---------- */
+
+/* FIND THIS PART IN checkPin():
+if(enteredPin === CORRECT_PIN)
+AND REPLACE ONLY THE SUCCESS BLOCK WITH THIS: */
+
+function pinSuccess(){
+
+    pinMessage.innerHTML = "Welcome, birthday girl 🌸";
+
+    document.getElementById("pinLock").innerHTML = "🔓";
+
+    authScreen.classList.add("show");
+
+    setTimeout(()=>{
+
+        goToEnvelope();
+
+    },2000);
+
+}
+   
+
+
+
     </script>
 
 </body>
