@@ -582,7 +582,67 @@ h1{
 
 }
 
+/* CHAPTER 2 */
 
+.chapter2-screen{
+
+display:none;
+position:fixed;
+inset:0;
+overflow:auto;
+padding:50px 20px;
+background:linear-gradient(135deg,#F9CBD6,#F2E0D2);
+
+}
+
+.chapter2-title{
+
+text-align:center;
+font-family:"Cormorant Garamond";
+font-size:52px;
+color:#9E182B;
+margin-bottom:45px;
+
+}
+
+.notes{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+
+max-width:1100px;
+margin:auto;
+
+}
+
+.note{
+
+background:white;
+
+padding:22px;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+font-size:17px;
+
+line-height:1.7;
+
+transition:.35s;
+
+cursor:pointer;
+
+transform:rotate(calc(-3deg + 6deg * var(--r)));
+
+}
+
+.note:hover{
+
+transform:scale(1.08) rotate(0deg);
+
+}
 
 </style>
 
@@ -832,6 +892,57 @@ Turn the Page →
     
 
 </button>
+
+</div>
+
+</section>
+    <!-- ========================= -->
+<!-- CHAPTER 2 -->
+<!-- ========================= -->
+
+<section class="chapter2-screen" id="chapter2">
+
+<h2 class="chapter2-title">
+18 Things I Admire About You ✨
+</h2>
+
+<div class="notes">
+
+<div class="note">📚 Your love for books.</div>
+
+<div class="note">🤍 Your calm personality.</div>
+
+<div class="note">💼 Future Boss Lady energy.</div>
+
+<div class="note">😂 Your dry humour.</div>
+
+<div class="note">🌸 The way you stay genuine.</div>
+
+<div class="note">☕ Coffee + books = Pallavi.</div>
+
+<div class="note">🎬 Your comfort movies.</div>
+
+<div class="note">🌧 Your peaceful vibe.</div>
+
+<div class="note">💪 Quiet confidence.</div>
+
+<div class="note">📖 The stories you'll write.</div>
+
+<div class="note">🌍 Your big dreams.</div>
+
+<div class="note">😊 Your smile.</div>
+
+<div class="note">✨ The way you inspire people.</div>
+
+<div class="note">🌷 Your kindness.</div>
+
+<div class="note">🎀 Your simplicity.</div>
+
+<div class="note">📚 Commerce queen.</div>
+
+<div class="note">💖 An amazing friend.</div>
+
+<div class="note">🎂 And today... you're officially 18!</div>
 
 </div>
 
@@ -1100,13 +1211,13 @@ showBook();
 function showBook(){
 
     document.getElementById("questionScreen").style.display="none";
-    document.getElementById("bookScreen").style.display="flex";
-
-}
-
+   
+    
 document.getElementById("nextChapter").onclick=function(){
 
-    alert("📖 Chapter 2 begins here!");
+document.getElementById("bookScreen").style.display="none";
+
+document.getElementById("chapter2").style.display="block";
 
 }
     
