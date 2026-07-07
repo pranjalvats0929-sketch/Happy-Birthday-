@@ -1578,6 +1578,24 @@ transform:translateY(0);
 
 }
 
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
    
 </style>
 
@@ -2440,7 +2458,12 @@ heartSeal.addEventListener("click", () => {
             .classList.add("hidden");
 
             document.getElementById("letterScreen")
-            .classList.remove("hidden");
+            const letterScreen =
+document.getElementById("letterScreen");
+
+letterScreen.classList.remove("hidden");
+letterScreen.style.display="flex";
+letterScreen.style.opacity="1";
 
         }, 800);
 
