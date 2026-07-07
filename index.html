@@ -1563,6 +1563,141 @@ document.getElementById(
 
 }
 
+/* ==========================================
+   PIN SCREEN LOGIC
+========================================== */
+
+const CORRECT_PIN = "08072008";
+
+let enteredPin = "";
+
+const dots = document.querySelectorAll(".dot");
+
+const pinMessage = document.getElementById("pinMessage");
+
+const pinLock = document.getElementById("pinLock");
+
+const keypadButtons = document.querySelectorAll(".key[data-key]");
+
+const backspace = document.getElementById("backspace");
+
+const wrongMessages = [
+
+"That's not your birthday, pretty girl 🤨",
+
+"Hint: It's a very special day... 🎂",
+
+"Nope... try again 🌷",
+
+"Only Pallavi can unlock this little world 💌",
+
+"Are you testing me? 😭"
+
+];
+
+function updateDots(){
+
+    dots.forEach((dot,index)=>{
+
+        if(index < enteredPin.length){
+
+            dot.classList.add("active");
+
+        }else{
+
+            dot.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+keypadButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        if(enteredPin.length >= 8) return;
+
+        enteredPin += button.dataset.key;
+
+        updateDots();
+
+        if(enteredPin.length === 8){
+
+            setTimeout(checkPin,200);
+
+        }
+
+    });
+
+});
+
+backspace.addEventListener("click",()=>{
+
+    enteredPin = enteredPin.slice(0,-1);
+
+    updateDots();
+
+});
+
+function checkPin(){
+
+    if(enteredPin === CORRECT_PIN){
+
+        pinMessage.textContent =
+
+        "Welcome Birthday Girl 🌸";
+
+        pinLock.textContent = "🔓";
+
+        setTimeout(()=>{
+
+            document.getElementById("pinScreen")
+            .classList.add("hidden");
+
+            document.getElementById("envelopeScreen")
+            .classList.remove("hidden");
+
+        },800);
+
+    }
+
+    else{
+
+        pinMessage.textContent =
+
+        wrongMessages[
+        Math.floor(Math.random()*wrongMessages.length)
+        ];
+
+        document.querySelector(".pinCard")
+        .animate([
+
+            {transform:"translateX(-10px)"},
+
+            {transform:"translateX(10px)"},
+
+            {transform:"translateX(-8px)"},
+
+            {transform:"translateX(8px)"},
+
+            {transform:"translateX(0)"}
+
+        ],{
+
+            duration:400
+
+        });
+
+        enteredPin = "";
+
+        updateDots();
+
+    }
+
+}
+   
 </script>
 
 </body>
