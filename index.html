@@ -79,54 +79,863 @@
             PIN LOCK
     ====================================================== */
 
+#lock-screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#fff9fc,#fff6ee,#f9edff);
+}
 
+.lock-container{
+    width:min(420px,95%);
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(18px);
+    border-radius:28px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.lock-icon{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.lock-container h1{
+    font-size:2.2rem;
+    color:#9d7bd8;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.pin-display{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin:25px 0;
+}
+
+.dot{
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#eadcf7;
+    transition:.3s;
+}
+
+.dot.active{
+    background:#f8b6c8;
+    transform:scale(1.15);
+}
+
+#message{
+    min-height:28px;
+    color:#8b6ea8;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.keypad{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.key{
+    height:65px;
+    border:none;
+    border-radius:18px;
+    font-size:1.2rem;
+    cursor:pointer;
+    background:#ffd9e8;
+    color:#4b3f54;
+    transition:.25s;
+    font-weight:600;
+}
+
+.key:hover{
+    transform:translateY(-3px);
+    background:#f8b6c8;
+}
+
+.key:active{
+    transform:scale(.95);
+}
+
+.clear,
+.clear-all{
+    background:#e9d8fd;
+}
 
     /* =====================================================
             SECTION 2 CSS
             LIVE COUNTDOWN
     ====================================================== */
 
+.countdown-card{
+    max-width:900px;
+    text-align:center;
+    animation:fadeUp 1s ease;
+}
 
+.countdown-card h1{
+    font-size:3rem;
+    color:var(--purple);
+    margin-bottom:15px;
+}
+
+.countdown-card .subtitle{
+    font-size:1.1rem;
+    color:#666;
+    margin-bottom:40px;
+}
+
+.countdown-box{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.time-box{
+    width:130px;
+    height:130px;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    border-radius:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.time-box:hover{
+    transform:translateY(-8px) scale(1.05);
+}
+
+.time-box span{
+    font-size:3rem;
+    font-weight:700;
+    color:var(--text);
+}
+
+.time-box small{
+    margin-top:8px;
+    font-size:.95rem;
+    letter-spacing:1px;
+    color:#555;
+}
+
+#countdownMessage{
+    font-size:1.2rem;
+    color:var(--purple);
+    font-weight:600;
+    margin-top:15px;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .countdown-card h1{
+        font-size:2.2rem;
+    }
+
+    .countdown-box{
+        gap:15px;
+    }
+
+    .time-box{
+        width:95px;
+        height:95px;
+    }
+
+    .time-box span{
+        font-size:2rem;
+    }
+
+}
 
     /* =====================================================
             SECTION 3 CSS
             HERO
     ====================================================== */
 
+#hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,#ffffff 0%,#fff9fc 35%,#fff6ee 100%);
+}
 
+.hero-content{
+    max-width:900px;
+    text-align:center;
+    z-index:2;
+    animation:heroFade 1.5s ease;
+}
+
+.hero-content h3{
+    color:var(--purple);
+    font-size:1.3rem;
+    letter-spacing:2px;
+    margin-bottom:18px;
+    font-weight:500;
+}
+
+.hero-content h1{
+    font-family:'Playfair Display',serif;
+    font-size:4.6rem;
+    line-height:1.15;
+    color:var(--text);
+    margin-bottom:25px;
+}
+
+.hero-content sup{
+    font-size:1.8rem;
+}
+
+.hero-content p{
+    max-width:650px;
+    margin:auto;
+    line-height:1.9;
+    color:#666;
+    font-size:1.12rem;
+}
+
+#beginBtn{
+    margin-top:45px;
+    padding:18px 42px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+    color:var(--text);
+    font-size:1.05rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+#beginBtn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 22px 45px rgba(0,0,0,.15);
+}
+
+.floating-hearts span{
+    position:absolute;
+    bottom:-80px;
+    font-size:2rem;
+    opacity:.8;
+    animation:floatUp linear infinite;
+}
+
+.floating-hearts span:nth-child(1){left:8%;animation-duration:10s;}
+.floating-hearts span:nth-child(2){left:18%;animation-duration:14s;}
+.floating-hearts span:nth-child(3){left:30%;animation-duration:11s;}
+.floating-hearts span:nth-child(4){left:45%;animation-duration:15s;}
+.floating-hearts span:nth-child(5){left:60%;animation-duration:12s;}
+.floating-hearts span:nth-child(6){left:72%;animation-duration:13s;}
+.floating-hearts span:nth-child(7){left:86%;animation-duration:10s;}
+.floating-hearts span
 
     /* =====================================================
             SECTION 4 CSS
             LETTER
     ====================================================== */
 
+/* =====================================================
+        SECTION 4 CSS
+        LETTER
+====================================================== */
 
+#letter{
+    background:linear-gradient(180deg,#fff9fc,#fff6ee);
+}
+
+.letter-paper{
+
+    width:min(850px,95%);
+    background:#fffefc;
+
+    padding:60px 45px;
+
+    border-radius:24px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.paper-pin{
+
+    position:absolute;
+
+    top:18px;
+    right:25px;
+
+    font-size:2rem;
+
+}
+
+.letter-paper h2{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:var(--purple);
+
+}
+
+#typedLetter{
+
+    font-family:'Caveat',cursive;
+
+    font-size:2rem;
+
+    line-height:1.8;
+
+    color:#555;
+
+    min-height:420px;
+
+    white-space:pre-wrap;
+
+}
+
+#reasonBtn{
+
+    display:block;
+
+    margin:40px auto 0;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,var(--pink),var(--lavender));
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+#reasonBtn:hover{
+
+    transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+#typedLetter{
+
+font-size:1.5rem;
+
+}
+
+.letter-paper{
+
+padding:35px 22px;
+
+}
+
+}
 
     /* =====================================================
             SECTION 5 CSS
             18 REASONS
     ====================================================== */
 
+/* =====================================================
+        SECTION 5 CSS
+====================================================== */
 
+#reasons{
+
+background:linear-gradient(180deg,#fff6ee,#fff9fc);
+
+}
+
+.reason-title{
+
+font-size:2.5rem;
+
+margin-bottom:45px;
+
+text-align:center;
+
+color:var(--purple);
+
+}
+
+.reason-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+
+gap:25px;
+
+width:100%;
+
+max-width:1100px;
+
+}
+
+.reason-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:22px;
+
+box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+.reason-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.reason-card span{
+
+font-size:2rem;
+
+font-weight:bold;
+
+color:var(--purple);
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+.reason-card p{
+
+color:#666;
+
+}
+
+#wishBtn{
+
+margin-top:45px;
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,var(--pink),var(--lavender));
+
+font-weight:600;
+
+font-size:1rem;
+
+}
 
     /* =====================================================
             SECTION 6 CSS
             BIRTHDAY WISHES
     ====================================================== */
 
+/* =====================================================
+        SECTION 6 CSS
+====================================================== */
 
+#wishes{
+
+background:linear-gradient(180deg,#fff9fc,#fff6ee);
+
+}
+
+.wish-title{
+
+font-size:2.6rem;
+
+color:var(--purple);
+
+margin-bottom:40px;
+
+text-align:center;
+
+}
+
+.wish-container{
+
+display:grid;
+
+gap:25px;
+
+max-width:900px;
+
+width:100%;
+
+}
+
+.wish-card{
+
+background:white;
+
+padding:28px;
+
+border-radius:22px;
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.wish-card:hover{
+
+transform:translateX(8px);
+
+}
+
+#finalBtn{
+
+margin-top:45px;
+
+padding:18px 42px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:1rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,var(--pink),var(--lavender));
+
+box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
 
     /* =====================================================
             SECTION 7 CSS
             FINAL CELEBRATION
     ====================================================== */
 
+/* =====================================================
+        SECTION 7 CSS
+====================================================== */
 
+#finale{
+
+background:linear-gradient(180deg,#fff6ee,#fff9fc);
+
+}
+
+.final-container{
+
+max-width:900px;
+
+text-align:center;
+
+padding:60px;
+
+background:white;
+
+border-radius:30px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.final-container h3{
+
+color:var(--purple);
+
+margin-bottom:10px;
+
+}
+
+.final-container h1{
+
+font-size:4rem;
+
+margin:15px 0;
+
+}
+
+.final-container h2{
+
+color:#f59ab5;
+
+margin-bottom:30px;
+
+}
+
+.final-container p{
+
+font-size:1.15rem;
+
+line-height:2;
+
+white-space:pre-line;
+
+color:#555;
+
+}
+
+.balloons{
+
+font-size:3rem;
+
+margin:35px 0;
+
+animation:float 2s ease-in-out infinite alternate;
+
+}
+
+#celebrateBtn{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,var(--pink),var(--lavender));
+
+font-size:1.1rem;
+
+font-weight:600;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-15px);
+
+}
+
+}
 
     /* =====================================================
             RESPONSIVE CSS
     ====================================================== */
+/* =====================================================
+                RESPONSIVE CSS
+====================================================== */
 
+@media (max-width:1024px){
+
+section{
+padding:70px 6%;
+}
+
+.hero-content h1{
+font-size:3.6rem;
+}
+
+.final-container h1{
+font-size:3.2rem;
+}
+
+}
+
+@media (max-width:768px){
+
+section{
+padding:50px 20px;
+}
+
+.card,
+.lock-container,
+.letter-paper,
+.final-container{
+width:100%;
+padding:30px 22px;
+}
+
+.hero-content h1{
+font-size:2.6rem;
+line-height:1.2;
+}
+
+.hero-content h3{
+font-size:1rem;
+}
+
+.hero-content p{
+font-size:1rem;
+line-height:1.8;
+}
+
+#beginBtn,
+#reasonBtn,
+#wishBtn,
+#finalBtn,
+#celebrateBtn{
+width:100%;
+padding:16px;
+font-size:1rem;
+}
+
+.countdown-box{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.time-box{
+width:100%;
+height:100px;
+}
+
+.time-box span{
+font-size:2rem;
+}
+
+.reason-grid{
+grid-template-columns:1fr;
+}
+
+.reason-card{
+padding:20px;
+}
+
+.wish-container{
+gap:18px;
+}
+
+.wish-card{
+padding:20px;
+font-size:1rem;
+}
+
+.letter-paper{
+padding:30px 20px;
+}
+
+#typedLetter{
+font-size:1.45rem;
+line-height:1.8;
+min-height:300px;
+}
+
+.final-container{
+padding:35px 20px;
+}
+
+.final-container h1{
+font-size:2.5rem;
+}
+
+.final-container h2{
+font-size:1.8rem;
+}
+
+.final-container p{
+font-size:1rem;
+line-height:1.9;
+}
+
+.lock-container h1{
+font-size:1.9rem;
+}
+
+.key{
+height:58px;
+font-size:1.1rem;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero-content h1{
+font-size:2.1rem;
+}
+
+.countdown-card h1{
+font-size:2rem;
+}
+
+.reason-title,
+.wish-title{
+font-size:2rem;
+}
+
+.time-box{
+height:85px;
+}
+
+.time-box span{
+font-size:1.7rem;
+}
+
+#typedLetter{
+font-size:1.3rem;
+}
+
+.final-container h1{
+font-size:2rem;
+}
+
+.balloons{
+font-size:2rem;
+}
+
+}
 
 
     </style>
@@ -139,7 +948,62 @@
                 SECTION 1
                 PIN LOCK
 ====================================================== -->
+<section id="lock-screen">
 
+    <div class="lock-container">
+
+        <div class="lock-icon" id="lockIcon">
+            🔒
+        </div>
+
+        <h1>Hey, Pretty Girl 🌷</h1>
+
+        <p class="subtitle">
+            Before we begin...
+            <br>
+            Enter your special date.
+        </p>
+
+        <div class="pin-display">
+
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+        <p id="message">
+            Enter your birthday 💖
+        </p>
+
+        <div class="keypad">
+
+            <button class="key">1</button>
+            <button class="key">2</button>
+            <button class="key">3</button>
+
+            <button class="key">4</button>
+            <button class="key">5</button>
+            <button class="key">6</button>
+
+            <button class="key">7</button>
+            <button class="key">8</button>
+            <button class="key">9</button>
+
+            <button class="key clear">⌫</button>
+            <button class="key">0</button>
+            <button class="key clear-all">C</button>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =====================================================
@@ -147,42 +1011,265 @@
                 LIVE COUNTDOWN
 ====================================================== -->
 
+<section id="countdown" style="display:none;">
 
+    <div class="card countdown-card">
+
+        <h1>Almost Time... 🎂</h1>
+
+        <p class="subtitle">
+            Just a little longer before your surprise begins.
+        </p>
+
+        <div class="countdown-box">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+        <p id="countdownMessage">
+            Counting every heartbeat... ❤️
+        </p>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
                 SECTION 3
                 HERO
 ====================================================== -->
 
+<section id="hero" style="display:none;">
 
+    <div class="hero-content">
+
+        <h3>For Someone Truly Special ✨</h3>
+
+        <h1>
+            Happy 18<sup>th</sup><br>
+            Birthday,<br>
+            Pallavi ❤️
+        </h1>
+
+        <p>
+            Today isn't just another birthday.
+            It's the beginning of a beautiful new chapter.
+            Welcome to adulthood...
+            I hope this little website becomes one of your favourite memories.
+        </p>
+
+        <button id="beginBtn">
+            Open Your Letter 💌
+        </button>
+
+    </div>
+
+    <div class="floating-hearts">
+        <span>🤍</span>
+        <span>🌸</span>
+        <span>💖</span>
+        <span>✨</span>
+        <span>🦋</span>
+        <span>🌷</span>
+        <span>💗</span>
+        <span>⭐</span>
+    </div>
+
+</section>
 
 <!-- =====================================================
                 SECTION 4
                 LETTER
 ====================================================== -->
 
+<!-- =====================================================
+                SECTION 4
+                LETTER
+====================================================== -->
 
+<section id="letter" style="display:none;">
+
+    <div class="letter-paper">
+
+        <span class="paper-pin">📌</span>
+
+        <h2>💌 A Letter For You</h2>
+
+        <div id="typedLetter"></div>
+
+        <button id="reasonBtn">
+            Continue 🌸
+        </button>
+
+    </div>
+
+</section>
 
 <!-- =====================================================
                 SECTION 5
                 18 REASONS
 ====================================================== -->
 
+<!-- =====================================================
+                SECTION 5
+                18 REASONS
+====================================================== -->
 
+<section id="reasons" style="display:none;">
+
+<h2 class="reason-title">
+18 Little Reasons Why You're Amazing 🌸
+</h2>
+
+<div class="reason-grid">
+
+<div class="reason-card"><span>1</span><p>Replace Later</p></div>
+<div class="reason-card"><span>2</span><p>Replace Later</p></div>
+<div class="reason-card"><span>3</span><p>Replace Later</p></div>
+<div class="reason-card"><span>4</span><p>Replace Later</p></div>
+<div class="reason-card"><span>5</span><p>Replace Later</p></div>
+<div class="reason-card"><span>6</span><p>Replace Later</p></div>
+<div class="reason-card"><span>7</span><p>Replace Later</p></div>
+<div class="reason-card"><span>8</span><p>Replace Later</p></div>
+<div class="reason-card"><span>9</span><p>Replace Later</p></div>
+<div class="reason-card"><span>10</span><p>Replace Later</p></div>
+<div class="reason-card"><span>11</span><p>Replace Later</p></div>
+<div class="reason-card"><span>12</span><p>Replace Later</p></div>
+<div class="reason-card"><span>13</span><p>Replace Later</p></div>
+<div class="reason-card"><span>14</span><p>Replace Later</p></div>
+<div class="reason-card"><span>15</span><p>Replace Later</p></div>
+<div class="reason-card"><span>16</span><p>Replace Later</p></div>
+<div class="reason-card"><span>17</span><p>Replace Later</p></div>
+<div class="reason-card"><span>18</span><p>Replace Later</p></div>
+
+</div>
+
+<button id="wishBtn">
+Birthday Wishes 🎂
+</button>
+
+</section>
 
 <!-- =====================================================
                 SECTION 6
                 BIRTHDAY WISHES
 ====================================================== -->
 
+<!-- =====================================================
+                SECTION 6
+                BIRTHDAY WISHES
+====================================================== -->
 
+<section id="wishes" style="display:none;">
+
+<h2 class="wish-title">
+A Few Birthday Wishes For You 🤍
+</h2>
+
+<div class="wish-container">
+
+<div class="wish-card">
+🌸 May your 18th year be filled with happiness, courage and unforgettable memories.
+</div>
+
+<div class="wish-card">
+✨ May every dream you quietly carry find its way into reality.
+</div>
+
+<div class="wish-card">
+🦋 I hope college gives you wonderful friends, beautiful memories and endless reasons to smile.
+</div>
+
+<div class="wish-card">
+💖 Never lose your kindness. It's one of the most beautiful things about you.
+</div>
+
+<div class="wish-card">
+🌷 Keep laughing, keep shining and keep being unapologetically yourself.
+</div>
+
+</div>
+
+<button id="finalBtn">
+One Last Thing... ❤️
+</button>
+
+</section>
 
 <!-- =====================================================
                 SECTION 7
                 FINAL CELEBRATION
 ====================================================== -->
 
+<!-- =====================================================
+                SECTION 7
+                FINAL CELEBRATION
+====================================================== -->
 
+<section id="finale" style="display:none;">
+
+<div class="final-container">
+
+<h3>✨ That's All...</h3>
+
+<h1>Happy 18<sup>th</sup> Birthday ❤️</h1>
+
+<h2>Pallavi</h2>
+
+<p>
+
+I hope this tiny corner of the internet
+made you smile even a little.
+
+Thank you for taking your time to
+go through everything.
+
+You deserve every happiness,
+every success,
+and every beautiful thing life has to offer.
+
+Never stop smiling.
+
+Never stop being you.
+
+Happy Birthday once again. 🌸
+
+</p>
+
+<div class="balloons">
+🎈 🎈 🎈 🎈 🎈
+</div>
+
+<button id="celebrateBtn">
+
+🎉 Celebrate 🎉
+
+</button>
+
+<div id="confetti"></div>
+
+</div>
+
+</section>
 
 <script>
 
@@ -196,7 +1283,82 @@
                 SECTION 1 JS
                 PIN LOCK
 ====================================================== */
+const correctPin = "08072008";
+let enteredPin = "";
 
+const dots = document.querySelectorAll(".dot");
+const message = document.getElementById("message");
+const lockIcon = document.getElementById("lockIcon");
+const keys = document.querySelectorAll(".key");
+
+const wrongMessages = [
+    "That's not your birthday 🤨",
+    "Hint: It's a very special day 🎂",
+    "Nope... try again 🌷",
+    "You know this one 💕",
+    "Almost... not quite ✨"
+];
+
+function updateDots() {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i < enteredPin.length);
+    });
+}
+
+function checkPin() {
+
+    if (enteredPin === correctPin) {
+
+        message.innerHTML = "Welcome Birthday Girl ❤️";
+        lockIcon.textContent = "🔓";
+
+        setTimeout(() => {
+            document.getElementById("lock-screen").style.display = "none";
+            document.getElementById("countdown").style.display = "flex";
+        }, 1200);
+
+    } else {
+
+        message.innerHTML =
+            wrongMessages[Math.floor(Math.random() * wrongMessages.length)];
+
+        enteredPin = "";
+        updateDots();
+
+    }
+
+}
+
+keys.forEach(key => {
+
+    key.addEventListener("click", () => {
+
+        const value = key.textContent;
+
+        if (value === "⌫") {
+            enteredPin = enteredPin.slice(0, -1);
+            updateDots();
+            return;
+        }
+
+        if (value === "C") {
+            enteredPin = "";
+            updateDots();
+            return;
+        }
+
+        if (enteredPin.length < 8) {
+            enteredPin += value;
+            updateDots();
+        }
+
+        if (enteredPin.length === 8) {
+            setTimeout(checkPin, 250);
+        }
+
+    });
+
+});
 
 
 /* =====================================================
@@ -204,42 +1366,235 @@
                 LIVE COUNTDOWN
 ====================================================== */
 
+// 🔥 CHANGE THIS ONLY IF NEEDED
+const birthdayDate = new Date("July 8, 2026 00:00:00").getTime();
 
+const dayBox = document.getElementById("days");
+const hourBox = document.getElementById("hours");
+const minuteBox = document.getElementById("minutes");
+const secondBox = document.getElementById("seconds");
+
+const countdownMessage = document.getElementById("countdownMessage");
+
+const countdown = setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const distance = birthdayDate - now;
+
+    if(distance <= 0){
+
+        clearInterval(countdown);
+
+        document.getElementById("countdown").style.display = "none";
+
+        document.getElementById("hero").style.display = "flex";
+
+        return;
+    }
+
+    const days = Math.floor(distance/(1000*60*60*24));
+
+    const hours = Math.floor(
+        (distance%(1000*60*60*24))/(1000*60*60)
+    );
+
+    const minutes = Math.floor(
+        (distance%(1000*60*60))/(1000*60)
+    );
+
+    const seconds = Math.floor(
+        (distance%(1000*60))/1000
+    );
+
+    dayBox.textContent = String(days).padStart(2,"0");
+    hourBox.textContent = String(hours).padStart(2,"0");
+    minuteBox.textContent = String(minutes).padStart(2,"0");
+    secondBox.textContent = String(seconds).padStart(2,"0");
+
+},1000);
 
 /* =====================================================
                 SECTION 3 JS
                 HERO
 ====================================================== */
 
+const beginBtn = document.getElementById("beginBtn");
 
+beginBtn.addEventListener("click", () => {
+
+    // Hide Hero
+    document.getElementById("hero").style.display = "none";
+
+    // Show Letter
+    document.getElementById("letter").style.display = "flex";
+
+    // Smooth scroll
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
 
 /* =====================================================
                 SECTION 4 JS
                 LETTER
 ====================================================== */
 
+/* =====================================================
+        SECTION 4 JS
+        LETTER
+====================================================== */
 
+const fullLetter = `
+
+PASTE YOUR LETTER HERE
+
+`;
+
+const typedLetter = document.getElementById("typedLetter");
+
+let index = 0;
+
+function typeLetter(){
+
+    if(index < fullLetter.length){
+
+        typedLetter.innerHTML += fullLetter.charAt(index);
+
+        index++;
+
+        setTimeout(typeLetter,35);
+
+    }
+
+}
+
+beginBtn.addEventListener("click",()=>{
+
+    typedLetter.innerHTML="";
+
+    index=0;
+
+    typeLetter();
+
+});
+
+document.getElementById("reasonBtn").addEventListener("click",()=>{
+
+    document.getElementById("letter").style.display="none";
+
+    document.getElementById("reasons").style.display="flex";
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
 
 /* =====================================================
                 SECTION 5 JS
                 18 REASONS
 ====================================================== */
 
+/* =====================================================
+        SECTION 5 JS
+====================================================== */
 
+document.getElementById("wishBtn").addEventListener("click",()=>{
+
+document.getElementById("reasons").style.display="none";
+
+document.getElementById("wishes").style.display="flex";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
 
 /* =====================================================
                 SECTION 6 JS
                 BIRTHDAY WISHES
 ====================================================== */
 
+/* =====================================================
+        SECTION 6 JS
+====================================================== */
 
+document.getElementById("finalBtn").addEventListener("click",()=>{
+
+document.getElementById("wishes").style.display="none";
+
+document.getElementById("finale").style.display="flex";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
 
 /* =====================================================
                 SECTION 7 JS
                 FINAL CELEBRATION
 ====================================================== */
 
+/* =====================================================
+        SECTION 7 JS
+====================================================== */
 
+document.getElementById("celebrateBtn").addEventListener("click",()=>{
+
+for(let i=0;i<120;i++){
+
+let heart=document.createElement("div");
+
+heart.innerHTML=Math.random()>0.5?"💖":"✨";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="-20px";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.transition="4s linear";
+
+heart.style.zIndex="9999";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform=`translateY(${window.innerHeight+100}px) rotate(720deg)`;
+
+heart.style.opacity="0";
+
+},100);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},4200);
+
+}
+
+});
 
 </script>
 
