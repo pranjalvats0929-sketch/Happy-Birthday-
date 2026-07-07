@@ -1068,6 +1068,209 @@ opacity:1;
 
 }
    
+/* ==========================================
+   MODULE 3A
+   ENVELOPE
+========================================== */
+
+.envelopeWrapper{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:28px;
+
+text-align:center;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:300px;
+
+height:190px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+.envelope:hover{
+
+transform:translateY(-6px);
+
+}
+
+.envelopeBody{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:125px;
+
+background:var(--rose);
+
+border-radius:0 0 20px 20px;
+
+box-shadow:
+
+0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.flap{
+
+position:absolute;
+
+top:0;
+
+width:100%;
+
+height:100px;
+
+background:var(--pink);
+
+clip-path:
+
+polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:5;
+
+}
+
+.letterCard{
+
+position:absolute;
+
+left:50%;
+
+bottom:25px;
+
+transform:translateX(-50%);
+
+width:230px;
+
+height:140px;
+
+background:#FFFDF9;
+
+border-radius:10px;
+
+padding:18px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+font-family:
+
+"Caveat",
+
+cursive;
+
+font-size:26px;
+
+color:var(--wine);
+
+box-shadow:
+
+0 8px 18px rgba(0,0,0,.12);
+
+transition:1s;
+
+z-index:2;
+
+}
+
+.heartSeal{
+
+position:absolute;
+
+left:50%;
+
+top:88px;
+
+transform:translate(-50%,-50%);
+
+width:54px;
+
+height:54px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.18);
+
+z-index:10;
+
+cursor:pointer;
+
+animation:heartBeat 1.6s infinite;
+
+}
+
+@keyframes heartBeat{
+
+0%,100%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1);
+
+}
+
+50%{
+
+transform:
+
+translate(-50%,-50%)
+
+scale(1.12);
+
+}
+
+}
+
+.envelopeHint{
+
+font-weight:500;
+
+color:var(--wine);
+
+min-height:24px;
+
+}
+   
 </style>
 
 </head>
@@ -1286,8 +1489,76 @@ class="screen hidden">
     <!-- Envelope -->
 
     <section
-    id="envelopeScreen"
-    class="screen hidden">
+id="envelopeScreen"
+class="screen hidden">
+
+<div class="envelopeWrapper">
+
+    <h1 class="title">
+
+        A Letter For You
+
+    </h1>
+
+    <p class="subtitle">
+
+        Every story deserves a beautiful beginning.
+
+        <br><br>
+
+        Tap the heart to open your birthday letter.
+
+        💌
+
+    </p>
+
+    <div
+    id="envelope"
+    class="envelope">
+
+        <!-- Letter -->
+
+        <div
+        id="letterCard"
+        class="letterCard">
+
+            Dear Pallavi,
+
+            <br>
+
+            This one's for you. 🌸
+
+        </div>
+
+        <!-- Flap -->
+
+        <div class="flap"></div>
+
+        <!-- Body -->
+
+        <div class="envelopeBody"></div>
+
+        <!-- Heart -->
+
+        <div
+        id="heartSeal"
+        class="heartSeal">
+
+            ❤️
+
+        </div>
+
+    </div>
+
+    <p
+    id="envelopeHint"
+    class="envelopeHint">
+
+        Tap the heart...
+
+    </p>
+
+</div>
 
     </section>
 
@@ -1697,6 +1968,8 @@ function checkPin(){
     }
 
 }
+
+
    
 </script>
 
