@@ -1489,6 +1489,16 @@ updateClock();
 
 setInterval(updateClock,1000);
 
+function vibrate(){
+
+    if(navigator.vibrate){
+
+        navigator.vibrate(12);
+
+    }
+
+}
+   
 const unlockButton =
 document.getElementById("unlockButton");
 
