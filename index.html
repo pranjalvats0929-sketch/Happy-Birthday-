@@ -825,129 +825,6 @@ transform:translateY(0);
 
 }
 
-.sliderTrack{
-
-margin-top:36px;
-
-width:100%;
-
-height:62px;
-
-border-radius:999px;
-
-background:
-
-rgba(255,255,255,.55);
-
-display:flex;
-
-align-items:center;
-
-position:relative;
-
-overflow:hidden;
-
-user-select:none;
-
-}
-
-.sliderTrack span{
-
-width:100%;
-
-text-align:center;
-
-font-size:15px;
-
-font-weight:500;
-
-color:var(--wine);
-
-pointer-events:none;
-
-}
-
-.sliderThumb{
-
-position:absolute;
-
-left:8px;
-
-top:8px;
-
-width:46px;
-
-height:46px;
-
-border-radius:50%;
-
-background:var(--wine);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:white;
-
-font-size:20px;
-
-cursor:grab;
-
-box-shadow:
-
-0 10px 25px rgba(158,24,43,.28);
-
-transition:
-
-transform .25s;
-
-}
-
-.sliderThumb:active{
-
-cursor:grabbing;
-
-transform:scale(.95);
-
-}
-
-@media(max-width:480px){
-
-.lockContainer{
-
-padding:30px 22px;
-
-}
-
-.time{
-
-font-size:62px;
-
-}
-
-.date{
-
-font-size:16px;
-
-}
-
-.sliderTrack{
-
-height:58px;
-
-}
-
-.sliderThumb{
-
-width:42px;
-
-height:42px;
-
-}
-
-}
 
 /* ==========================================
    CHUNK 6
@@ -1114,6 +991,82 @@ font-size:40px;
 }
 
 }
+
+/* ===========================
+   Unlock Button
+=========================== */
+
+.unlockButton{
+
+width:100%;
+
+margin-top:35px;
+
+padding:18px;
+
+border:none;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.6);
+
+backdrop-filter:blur(12px);
+
+font-size:17px;
+
+font-weight:600;
+
+color:var(--wine);
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.unlockButton:hover{
+
+transform:translateY(-3px);
+
+background:white;
+
+}
+
+.unlockButton:active{
+
+transform:scale(.97);
+
+}
+
+.unlockHint{
+
+margin-top:15px;
+
+font-size:14px;
+
+color:#7B5D63;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+
+opacity:.5;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
    
 </style>
 
@@ -1201,25 +1154,19 @@ class="screen">
 
     <!-- Slider -->
 
-    <div
-    id="sliderTrack"
-    class="sliderTrack">
+    <button
+id="unlockButton"
+class="unlockButton">
 
-        <div
-        id="sliderThumb"
-        class="sliderThumb">
+    ✨ Tap to Unlock ✨
 
-            ➜
+</button>
 
-        </div>
+<div class="unlockHint">
 
-        <span>
+    Your birthday surprise awaits 🌸
 
-            Swipe to Unlock
-
-        </span>
-
-    </div>
+</div>
 
 </div>
 
@@ -1542,99 +1489,14 @@ updateClock();
 
 setInterval(updateClock,1000);
 
-   /* ==========================================
-   CHUNK 5B
-   DRAG VARIABLES
-========================================== */
+const unlockButton =
+document.getElementById("unlockButton");
 
-const slider =
-document.getElementById("sliderThumb");
+unlockButton.addEventListener("click",()=>{
 
-const track =
-document.getElementById("sliderTrack");
+vibrate();
 
-const lockScreen =
-document.getElementById("lockScreen");
-
-let dragging = false;
-
-let startX = 0;
-
-let currentX = 0;
-
-let maxX = 0;
-
-function vibrate(){
-
-if(navigator.vibrate){
-
-navigator.vibrate(12);
-
-}
-
-}
-
-
-   /* ==========================================
-   CHUNK 5C
-   DRAG START
-========================================== */
-
-slider.addEventListener("pointerdown",(e)=>{
-
-dragging = true;
-
-slider.setPointerCapture(
-e.pointerId
-);
-
-startX = e.clientX;
-
-maxX =
-
-track.clientWidth -
-
-slider.clientWidth -
-
-16;
-
-slider.style.transition="none";
-
-});
-
-/* ---------- MOVE ---------- */
-
-slider.addEventListener("pointermove",(e)=>{
-
-if(!dragging) return;
-
-currentX =
-
-e.clientX-startX;
-
-if(currentX<0){
-
-currentX=0;
-
-}
-
-if(currentX>maxX){
-
-currentX=maxX;
-
-}
-
-slider.style.left=
-
-currentX+8+"px";
-
-});
-
-/* ---------- END ---------- */
-
-slider.addEventListener("pointerup",()=>{
-
-dragging=false;
+unlock();
 
 });
 
