@@ -1394,6 +1394,131 @@ transition:.35s;
 transform:translateY(-4px);
 
 }
+
+
+/* ==========================================
+   LETTER SCREEN
+========================================== */
+
+.paper{
+
+width:min(92%,720px);
+
+max-height:85vh;
+
+overflow:hidden;
+
+background:#FFFDF9;
+
+border-radius:24px;
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.15);
+
+display:flex;
+
+flex-direction:column;
+
+animation:fadeUp .8s ease;
+
+}
+
+.paperTop{
+
+height:60px;
+
+background:linear-gradient(
+
+90deg,
+
+#f8e6ea,
+
+#fff,
+
+#f8e6ea
+
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.paperPin{
+
+width:20px;
+
+height:20px;
+
+border-radius:50%;
+
+background:var(--wine);
+
+}
+
+.paperContent{
+
+padding:40px 30px;
+
+text-align:center;
+
+}
+
+.letterHeading{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:42px;
+
+color:var(--wine);
+
+margin-bottom:20px;
+
+}
+
+.letterIntro{
+
+font-size:17px;
+
+line-height:2;
+
+color:var(--text);
+
+margin-bottom:40px;
+
+}
+
+.readButton{
+
+padding:16px 34px;
+
+border:none;
+
+border-radius:999px;
+
+background:var(--wine);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.readButton:hover{
+
+transform:translateY(-4px);
+
+}
    
 </style>
 
@@ -1838,6 +1963,8 @@ const flowerList = [
 
 "💮"
 
+   "🌷"
+
 ];
 
 function createPetal(){
@@ -2209,53 +2336,6 @@ heartSeal.addEventListener("click", () => {
 
 });
 
-<!-- ==========================================
-     LETTER SCREEN
-========================================== -->
-
-<section
-id="letterScreen"
-class="screen hidden">
-
-<div class="paper">
-
-    <div class="paperTop">
-
-        <div class="paperPin"></div>
-
-    </div>
-
-    <div class="paperContent">
-
-        <h2 class="letterHeading">
-
-            💌 A Handwritten Letter
-
-        </h2>
-
-        <p class="letterIntro">
-
-            I remember we once talked about handwritten letters.
-
-            Since I couldn't be there to hand you one today,
-
-            I thought I'd do the next best thing.
-
-        </p>
-
-        <button
-        id="startReading"
-        class="readButton">
-
-            Open Letter 🤍
-
-        </button>
-
-    </div>
-
-</div>
-
-</section>
    
 </script>
 
