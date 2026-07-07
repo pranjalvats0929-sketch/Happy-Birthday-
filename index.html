@@ -4,21 +4,39 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday, Pallavi ❤️</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>
+Happy Birthday, Pallavi ❤️
+</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@700&display=swap"
+rel="stylesheet">
 
 <style>
 
 /* ==========================================
-   HAPPY BIRTHDAY PALLAVI
-   Designed by Pranjal ❤️
+   CHUNK 2 STARTS HERE
 ========================================== */
+   /* ==========================================
+   HAPPY BIRTHDAY PALLAVI ❤️
+   CINEMATIC EDITION
+   CHUNK 2
+========================================== */
+
+/* ========= RESET ========= */
 
 *{
     margin:0;
@@ -31,16 +49,39 @@ html{
     scroll-behavior:smooth;
 }
 
+body{
+
+    overflow:hidden;
+
+    height:100vh;
+
+    font-family:"Poppins",sans-serif;
+
+    color:#4A2F35;
+
+}
+
+/* ========= COLOR PALETTE ========= */
+
 :root{
 
     --pink:#F9CBD6;
+
     --rose:#F2AFBC;
+
     --cream:#F2E0D2;
+
     --wine:#9E182B;
+
     --text:#4A2F35;
 
-    --glass:rgba(255,255,255,.24);
-    --glass-border:rgba(255,255,255,.42);
+    --white:#FFFFFF;
+
+    --glass:
+    rgba(255,255,255,.22);
+
+    --glass-border:
+    rgba(255,255,255,.40);
 
     --shadow:
     0 20px 60px rgba(0,0,0,.12);
@@ -49,49 +90,63 @@ html{
 
 }
 
+/* ========= BODY ========= */
+
 body{
 
-    font-family:"Poppins",sans-serif;
-
     background:
+
     linear-gradient(
+
     -45deg,
+
     var(--pink),
+
     var(--rose),
+
     var(--cream),
-    var(--pink));
+
+    var(--pink)
+
+    );
 
     background-size:400% 400%;
 
-    animation:gradientMove 18s ease infinite;
+    animation:
 
-    overflow:hidden;
+    gradientMove
 
-    height:100vh;
-
-    color:var(--text);
+    18s ease infinite;
 
 }
 
-/* Animated Background */
+/* ========= ANIMATED GRADIENT ========= */
 
 @keyframes gradientMove{
 
 0%{
+
 background-position:0% 50%;
+
 }
 
 50%{
+
 background-position:100% 50%;
+
 }
 
 100%{
+
 background-position:0% 50%;
-}
 
 }
 
-.background{
+}
+
+/* ========= BACKGROUND ========= */
+
+#background{
 
 position:fixed;
 
@@ -99,9 +154,11 @@ inset:0;
 
 overflow:hidden;
 
-z-index:-5;
+z-index:-100;
 
 }
+
+/* ========= BLOBS ========= */
 
 .blob{
 
@@ -113,31 +170,39 @@ filter:blur(90px);
 
 opacity:.45;
 
-animation:blobFloat 18s ease-in-out infinite alternate;
+animation:
+
+blobFloat
+
+18s ease-in-out infinite alternate;
 
 }
 
 .blob1{
 
 width:320px;
+
 height:320px;
 
 background:var(--pink);
 
-top:-90px;
-left:-80px;
+top:-100px;
+
+left:-90px;
 
 }
 
 .blob2{
 
 width:360px;
+
 height:360px;
 
 background:var(--rose);
 
-right:-100px;
 bottom:-120px;
+
+right:-110px;
 
 animation-duration:24s;
 
@@ -145,15 +210,17 @@ animation-duration:24s;
 
 .blob3{
 
-width:240px;
-height:240px;
+width:250px;
+
+height:250px;
 
 background:white;
 
 opacity:.18;
 
 left:42%;
-top:50%;
+
+top:46%;
 
 animation-duration:30s;
 
@@ -164,7 +231,9 @@ animation-duration:30s;
 from{
 
 transform:
+
 translate(-20px,-20px)
+
 scale(1);
 
 }
@@ -172,40 +241,46 @@ scale(1);
 to{
 
 transform:
+
 translate(40px,35px)
-scale(1.1);
+
+scale(1.12);
 
 }
 
 }
 
-/* Floating Flowers */
+/* ========= PETALS ========= */
 
 .petal{
 
 position:absolute;
 
-top:-80px;
-
-font-size:22px;
+top:-60px;
 
 pointer-events:none;
 
 opacity:0;
 
-animation:fall linear forwards;
+animation:
+
+petalFall
+
+linear forwards;
 
 }
 
-@keyframes fall{
+@keyframes petalFall{
 
 0%{
 
-transform:
-translateY(-80px)
-rotate(0deg);
-
 opacity:0;
+
+transform:
+
+translateY(-60px)
+
+rotate(0deg);
 
 }
 
@@ -217,39 +292,35 @@ opacity:1;
 
 100%{
 
-transform:
-translateY(110vh)
-rotate(360deg);
-
 opacity:0;
 
-}
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
 
 }
 
-/* Reusable Glass */
+}
 
-.glass{
+/* ========= MAIN ========= */
 
-background:var(--glass);
+#app{
 
-backdrop-filter:blur(20px);
+position:relative;
 
--webkit-backdrop-filter:blur(20px);
+width:100%;
 
-border:1px solid var(--glass-border);
-
-border-radius:var(--radius);
-
-box-shadow:var(--shadow);
+height:100vh;
 
 }
 
-/* Every Full Screen */
+/* ========= SCREEN ========= */
 
 .screen{
 
-position:fixed;
+position:absolute;
 
 inset:0;
 
@@ -261,25 +332,77 @@ align-items:center;
 
 flex-direction:column;
 
-padding:20px;
+padding:24px;
 
-transition:.7s ease;
+transition:
+
+opacity .8s,
+
+transform .8s;
 
 }
 
-/* Common Title */
+/* ========= HIDDEN ========= */
+
+.hidden{
+
+display:none;
+
+}
+
+/* ========= GLASS ========= */
+
+.glass{
+
+background:
+
+var(--glass);
+
+border:
+
+1px solid
+
+var(--glass-border);
+
+backdrop-filter:
+
+blur(20px);
+
+-webkit-backdrop-filter:
+
+blur(20px);
+
+border-radius:
+
+var(--radius);
+
+box-shadow:
+
+var(--shadow);
+
+}
+
+/* ========= TYPOGRAPHY ========= */
 
 .title{
 
-font-family:"Cormorant Garamond",serif;
+font-family:
 
-font-size:clamp(42px,7vw,62px);
+"Cormorant Garamond",
+
+serif;
+
+font-size:
+
+clamp(42px,7vw,66px);
+
+font-weight:700;
 
 color:var(--wine);
 
-}
+text-align:center;
 
-/* Common Text */
+}
 
 .subtitle{
 
@@ -287,17 +410,101 @@ font-size:16px;
 
 line-height:1.8;
 
+text-align:center;
+
+max-width:650px;
+
 color:var(--text);
 
 }
 
-/* Mobile */
+.handwriting{
+
+font-family:
+
+"Caveat",
+
+cursive;
+
+}
+
+/* ========= BUTTON ========= */
+
+button{
+
+border:none;
+
+outline:none;
+
+font-family:inherit;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:active{
+
+transform:scale(.96);
+
+}
+
+/* ========= LINKS ========= */
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/* ========= IMAGES ========= */
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ========= SCROLLBAR ========= */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:var(--cream);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--rose);
+
+border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--wine);
+
+}
+
+/* ========= RESPONSIVE ========= */
 
 @media(max-width:768px){
 
 .title{
 
-font-size:46px;
+font-size:48px;
 
 }
 
@@ -309,56 +516,270 @@ font-size:15px;
 
 }
 
-    /* =====================================================
-   LOCK SCREEN
-===================================================== */
+@media(max-width:480px){
 
-.lock-screen{
-
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-height:100vh;
+.screen{
 
 padding:20px;
 
 }
 
-/* CLOCK */
+.title{
 
-.clock{
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+}
+/* ==========================================
+   CHUNK 3
+   ANIMATED BACKGROUND
+========================================== */
+
+/* ===============================
+   BACKGROUND LAYER
+=============================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-100;
+
+}
+
+/* ===============================
+   FLOATING BLOBS
+=============================== */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    animation:blobFloat 20s ease-in-out infinite alternate;
+
+}
+
+.blob1{
+
+    width:320px;
+
+    height:320px;
+
+    background:var(--pink);
+
+    left:-90px;
+
+    top:-90px;
+
+}
+
+.blob2{
+
+    width:360px;
+
+    height:360px;
+
+    background:var(--rose);
+
+    right:-120px;
+
+    bottom:-120px;
+
+    animation-duration:26s;
+
+}
+
+.blob3{
+
+    width:260px;
+
+    height:260px;
+
+    background:white;
+
+    opacity:.16;
+
+    left:45%;
+
+    top:45%;
+
+    animation-duration:32s;
+
+}
+
+@keyframes blobFloat{
+
+    from{
+
+        transform:
+
+        translate(-25px,-20px)
+
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+
+        translate(45px,40px)
+
+        scale(1.12);
+
+    }
+
+}
+
+/* ===============================
+   FALLING PETALS
+=============================== */
+
+.petal{
+
+    position:absolute;
+
+    top:-80px;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    user-select:none;
+
+    animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+    opacity:0;
+
+    transform:
+
+    translateY(-80px)
+
+    rotate(0deg);
+
+}
+
+15%{
+
+    opacity:1;
+
+}
+
+100%{
+
+    opacity:0;
+
+    transform:
+
+    translateY(110vh)
+
+    rotate(360deg);
+
+}
+
+}
+
+/* ===============================
+   SOFT GLOW
+=============================== */
+
+.backgroundGlow{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,.12),
+
+    transparent 70%
+
+    );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   CHUNK 4
+   LOCK SCREEN
+========================================== */
+
+.lockContainer{
+
+width:min(420px,95%);
+
+padding:42px 28px;
 
 text-align:center;
 
-margin-bottom:42px;
+}
 
-animation:fadeDown 1s ease;
+.clock{
+
+margin-bottom:35px;
 
 }
 
 .time{
 
-font-family:"Cormorant Garamond",serif;
+font-family:
+
+"Cormorant Garamond",
+
+serif;
 
 font-size:76px;
 
 font-weight:700;
 
-letter-spacing:2px;
-
 color:var(--wine);
+
+letter-spacing:2px;
 
 text-shadow:
 
-0 8px 20px rgba(158,24,43,.12);
+0 8px 20px rgba(0,0,0,.08);
 
 }
 
 .date{
 
-margin-top:8px;
+margin-top:10px;
 
 font-size:18px;
 
@@ -368,75 +789,17 @@ color:#6B4C53;
 
 }
 
-/* CARD */
+.lockIcon{
 
-.lock-card{
+font-size:58px;
 
-width:390px;
+margin-bottom:20px;
 
-max-width:95%;
+animation:
 
-padding:38px 30px;
+lockFloat
 
-text-align:center;
-
-position:relative;
-
-overflow:hidden;
-
-animation:fadeUp .9s ease;
-
-}
-
-/* Shine */
-
-.lock-card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:-140%;
-
-width:80%;
-
-height:100%;
-
-background:
-
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.35),
-transparent);
-
-transform:skewX(-20deg);
-
-animation:shine 5s infinite;
-
-}
-
-@keyframes shine{
-
-100%{
-
-left:170%;
-
-}
-
-}
-
-/* LOCK */
-
-.lock-icon{
-
-font-size:54px;
-
-margin-bottom:18px;
-
-animation:lockFloat 4s ease-in-out infinite;
+4s ease-in-out infinite;
 
 }
 
@@ -462,79 +825,59 @@ transform:translateY(0);
 
 }
 
-/* TEXT */
+.sliderTrack{
 
-.lock-title{
+margin-top:36px;
 
-font-family:"Cormorant Garamond",serif;
+width:100%;
 
-font-size:52px;
-
-color:var(--wine);
-
-margin-bottom:15px;
-
-}
-
-.lock-text{
-
-font-size:15px;
-
-line-height:1.9;
-
-color:var(--text);
-
-margin-bottom:34px;
-
-}
-
-/* SWIPE */
-
-.swipe-box{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:14px;
-
-cursor:pointer;
-
-user-select:none;
-
-}
-
-.swipe-track{
-
-width:210px;
-
-height:58px;
+height:62px;
 
 border-radius:999px;
 
 background:
 
-rgba(255,255,255,.58);
+rgba(255,255,255,.55);
+
+display:flex;
+
+align-items:center;
 
 position:relative;
 
 overflow:hidden;
 
+user-select:none;
+
 }
 
-.swipe-thumb{
+.sliderTrack span{
+
+width:100%;
+
+text-align:center;
+
+font-size:15px;
+
+font-weight:500;
+
+color:var(--wine);
+
+pointer-events:none;
+
+}
+
+.sliderThumb{
 
 position:absolute;
 
-top:8px;
-
 left:8px;
 
-width:42px;
+top:8px;
 
-height:42px;
+width:46px;
+
+height:46px;
 
 border-radius:50%;
 
@@ -548,71 +891,95 @@ align-items:center;
 
 color:white;
 
-font-size:18px;
+font-size:20px;
 
-transition:.35s;
+cursor:grab;
 
 box-shadow:
 
-0 10px 20px rgba(158,24,43,.25);
+0 10px 25px rgba(158,24,43,.28);
+
+transition:
+
+transform .25s;
 
 }
 
-.swipe-label{
+.sliderThumb:active{
 
-font-size:15px;
+cursor:grabbing;
 
-font-weight:500;
-
-color:var(--wine);
+transform:scale(.95);
 
 }
 
-.swipe-hint{
+@media(max-width:480px){
 
-font-size:13px;
+.lockContainer{
 
-color:#7B5D63;
-
-animation:pulse 2s infinite;
+padding:30px 22px;
 
 }
 
-@keyframes pulse{
+.time{
 
-0%,100%{
-
-opacity:.45;
+font-size:62px;
 
 }
 
-50%{
+.date{
 
-opacity:1;
+font-size:16px;
+
+}
+
+.sliderTrack{
+
+height:58px;
+
+}
+
+.sliderThumb{
+
+width:42px;
+
+height:42px;
 
 }
 
 }
 
-/* PIN SCREEN */
+/* ==========================================
+   CHUNK 6
+   PIN SCREEN
+========================================== */
 
-.pin-card{
+.pinCard{
 
-width:390px;
+width:min(420px,95%);
 
-max-width:95%;
-
-padding:35px 28px;
+padding:34px 24px;
 
 text-align:center;
 
 }
 
-.pin-title{
+.pinLock{
 
-font-family:"Cormorant Garamond",serif;
+font-size:54px;
 
-font-size:46px;
+margin-bottom:18px;
+
+}
+
+.pinTitle{
+
+font-family:
+
+"Cormorant Garamond",
+serif;
+
+font-size:48px;
 
 color:var(--wine);
 
@@ -620,31 +987,25 @@ margin-bottom:12px;
 
 }
 
-.pin-text{
-
-font-size:15px;
+.pinText{
 
 line-height:1.8;
 
-margin-bottom:30px;
-
-color:var(--text);
+margin-bottom:24px;
 
 }
 
-/* PIN DOTS */
-
-.pin-dots{
+.pinDots{
 
 display:flex;
 
 justify-content:center;
 
-gap:12px;
+gap:10px;
 
 flex-wrap:wrap;
 
-margin-bottom:24px;
+margin-bottom:22px;
 
 }
 
@@ -670,9 +1031,7 @@ transform:scale(1.15);
 
 }
 
-/* MESSAGE */
-
-.pin-message{
+.pinMessage{
 
 height:24px;
 
@@ -686,332 +1045,57 @@ margin-bottom:22px;
 
 }
 
-/* MOBILE */
-
-@media(max-width:480px){
-
-.time{
-
-font-size:60px;
-
-}
-
-.lock-title{
-
-font-size:42px;
-
-}
-
-.pin-title{
-
-font-size:38px;
-
-}
-
-.lock-card,
-.pin-card{
-
-padding:28px 22px;
-
-}
-
-.swipe-track{
-
-width:180px;
-
-}
-
-}
-
-    /* =====================================================
-   MODULE 1A-3
-   KEYPAD • AUTHENTICATION • UTILITIES
-   (Continue inside the same <style> tag)
-===================================================== */
-
-/* ==========================
-   KEYPAD
-========================== */
+/* KEYPAD */
 
 .keypad{
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:
 
-gap:16px;
+repeat(3,1fr);
 
-margin-top:10px;
+gap:14px;
 
 }
 
 .key{
 
-width:74px;
+width:72px;
 
-height:74px;
+height:72px;
 
 margin:auto;
 
-border:none;
-
-outline:none;
-
-cursor:pointer;
-
 border-radius:50%;
 
-font-family:"Poppins",sans-serif;
+background:
+
+rgba(255,255,255,.65);
 
 font-size:24px;
 
-font-weight:500;
-
 color:var(--wine);
-
-background:rgba(255,255,255,.65);
-
-backdrop-filter:blur(10px);
-
--webkit-backdrop-filter:blur(10px);
 
 box-shadow:
 
 0 8px 20px rgba(0,0,0,.08);
 
-transition:.25s;
-
 }
 
 .key:hover{
 
-transform:translateY(-4px);
-
-background:var(--wine);
-
-color:white;
+transform:translateY(-3px);
 
 }
 
-.key:active{
-
-transform:scale(.95);
-
-}
-
-.key.empty{
+.empty{
 
 visibility:hidden;
 
 pointer-events:none;
 
 }
-
-/* ==========================
-   WRONG PIN SHAKE
-========================== */
-
-.shake{
-
-animation:shake .45s;
-
-}
-
-@keyframes shake{
-
-0%{
-
-transform:translateX(0);
-
-}
-
-20%{
-
-transform:translateX(-10px);
-
-}
-
-40%{
-
-transform:translateX(10px);
-
-}
-
-60%{
-
-transform:translateX(-8px);
-
-}
-
-80%{
-
-transform:translateX(8px);
-
-}
-
-100%{
-
-transform:translateX(0);
-
-}
-
-}
-
-/* ==========================
-   AUTHENTICATING SCREEN
-========================== */
-
-.auth-screen{
-
-position:fixed;
-
-inset:0;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-background:rgba(255,255,255,.18);
-
-backdrop-filter:blur(20px);
-
--webkit-backdrop-filter:blur(20px);
-
-z-index:999;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.45s;
-
-}
-
-.auth-screen.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-.spinner{
-
-width:70px;
-
-height:70px;
-
-border-radius:50%;
-
-border:5px solid rgba(255,255,255,.35);
-
-border-top:5px solid var(--wine);
-
-animation:spin 1s linear infinite;
-
-margin-bottom:25px;
-
-}
-
-@keyframes spin{
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-.auth-title{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:42px;
-
-color:var(--wine);
-
-margin-bottom:10px;
-
-}
-
-.auth-text{
-
-font-size:15px;
-
-color:var(--text);
-
-}
-
-/* ==========================
-   TRANSITIONS
-========================== */
-
-.fade-out{
-
-opacity:0;
-
-transform:scale(1.05);
-
-pointer-events:none;
-
-transition:.7s;
-
-}
-
-.fade-in{
-
-opacity:1;
-
-transform:scale(1);
-
-transition:.7s;
-
-}
-
-.hidden{
-
-display:none !important;
-
-}
-
-/* ==========================
-   SCROLLBAR
-========================== */
-
-::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:var(--cream);
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:var(--rose);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:var(--wine);
-
-}
-
-/* ==========================
-   MOBILE
-========================== */
 
 @media(max-width:480px){
 
@@ -1021,73 +1105,57 @@ width:66px;
 
 height:66px;
 
-font-size:22px;
-
 }
 
-.keypad{
+.pinTitle{
 
-gap:14px;
-
-}
-
-.auth-title{
-
-font-size:34px;
-
-}
-
-.auth-text{
-
-font-size:14px;
+font-size:40px;
 
 }
 
 }
-
-    </style>
+   
+</style>
 
 </head>
 
 <body>
 
 <!-- ==========================================
-     ANIMATED BACKGROUND
+     Animated Background
 ========================================== -->
 
-<div class="background">
-
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-
-    <div id="petals"></div>
-
-</div>
+<div id="background"></div>
 
 <!-- ==========================================
-     LOCK SCREEN
+     All Screens Live Here
 ========================================== -->
 
-<section
-class="screen lock-screen"
-id="lockScreen">
+<main id="app">
 
-    <!-- Live Clock -->
+    <!-- Lock Screen -->
+
+    <section
+id="lockScreen"
+class="screen">
+
+<div class="lockContainer glass">
+
+    <!-- Live Time -->
 
     <div class="clock">
 
         <div
-        class="time"
-        id="time">
+        id="liveTime"
+        class="time">
 
             00:00
 
         </div>
 
         <div
-        class="date"
-        id="date">
+        id="liveDate"
+        class="date">
 
             Tuesday, 8 July
 
@@ -1095,371 +1163,291 @@ id="lockScreen">
 
     </div>
 
-    <!-- Lock Card -->
+    <!-- Lock -->
 
-    <div class="glass lock-card">
+    <div
+    id="lockIcon"
+    class="lockIcon">
 
-        <div
-        class="lock-icon"
-        id="lockIcon">
-
-            🔒
-
-        </div>
-
-        <h1 class="lock-title">
-
-            Dear Pallavi,
-
-        </h1>
-
-        <p class="lock-text">
-
-            Some gifts are wrapped with ribbons.
-
-            <br><br>
-
-            This one is wrapped with memories,
-            smiles,
-            and a little surprise made only for you.
-
-            <br><br>
-
-            Swipe to begin your birthday story.
-
-            🌸
-
-        </p>
-
-        <!-- Swipe -->
-
-        <div
-        class="swipe-box"
-        id="swipeBox">
-
-            <div class="swipe-track">
-
-                <div
-                class="swipe-thumb"
-                id="swipeThumb">
-
-                    ➜
-
-                </div>
-
-            </div>
-
-            <div class="swipe-label">
-
-                Swipe to Unlock
-
-            </div>
-
-            <div class="swipe-hint">
-
-                Your birthday surprise awaits ✨
-
-            </div>
-
-        </div>
+        🔒
 
     </div>
 
-</section>
+    <h1 class="title">
 
-<!-- ==========================================
-     PIN SCREEN
-========================================== -->
+        Dear Pallavi,
 
-<section
-class="screen hidden"
-id="pinScreen">
+    </h1>
 
-<div class="glass pin-card">
+    <p class="subtitle">
 
-<div
-class="lock-icon"
-id="pinLock">
+        Some gifts come wrapped in paper.
 
-🔐
+        <br><br>
 
-</div>
+        Yours is wrapped in memories,
 
-<h2 class="pin-title">
+        smiles,
 
-Enter Your Birthday
+        dreams,
 
-</h2>
+        and countless little moments.
 
-<p class="pin-text">
+        <br><br>
 
-Only the birthday girl knows the password.
+        Unlock to begin your birthday story.
 
-<br>
+    </p>
 
-(Hint: DDMMYYYY 🎂)
+    <!-- Slider -->
 
-</p>
-
-<!-- PIN DOTS -->
-
-<div
-class="pin-dots"
-id="pinDots">
-
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-<div class="dot"></div>
-
-</div>
-
-<div
-class="pin-message"
-id="pinMessage">
-
-Only Pallavi may enter 💕
-
-</div>
-
-<!-- Keypad starts below -->
-
-    <!-- ==========================================
-     KEYPAD
-========================================== -->
-
-<div class="keypad">
-
-    <button class="key" data-key="1">1</button>
-    <button class="key" data-key="2">2</button>
-    <button class="key" data-key="3">3</button>
-
-    <button class="key" data-key="4">4</button>
-    <button class="key" data-key="5">5</button>
-    <button class="key" data-key="6">6</button>
-
-    <button class="key" data-key="7">7</button>
-    <button class="key" data-key="8">8</button>
-    <button class="key" data-key="9">9</button>
-
-    <button class="key empty"></button>
-
-    <button class="key" data-key="0">0</button>
-
-    <button
-    class="key"
-    id="backspace">
-
-        ⌫
-
-    </button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================================
-     AUTHENTICATING SCREEN
-========================================== -->
-
-<section
-
-class="auth-screen"
-
-id="authScreen">
-
-<div class="spinner"></div>
-
-<h2 class="auth-title">
-
-Authenticating...
-
-</h2>
-
-<p class="auth-text">
-
-Checking birthday credentials 💕
-
-</p>
-
-</section>
-
-<!-- ==========================================
-     NEXT MODULE PLACEHOLDER
-========================================== -->
-
-<div
-
-id="nextModule"
-
-style="display:none;">
-
-<!--
-Module 2 (Envelope Screen)
-will be inserted here.
--->
-
-</div>
-   <!-- =====================================================
-     MODULE 2B
-     ENVELOPE SCREEN
-     Paste this ABOVE:
-     <div id="nextModule" ...>
-====================================================== -->
-
-<section
-class="screen envelope-screen"
-id="envelopeScreen">
-
-    <div class="envelope-container">
-
-        <h1 class="envelope-title">
-
-            A Letter For You
-
-        </h1>
-
-        <p class="envelope-subtitle">
-
-            Every story deserves a beautiful beginning.
-
-            <br><br>
-
-            Tap the heart to open your birthday letter. 💌
-
-        </p>
+    <div
+    id="sliderTrack"
+    class="sliderTrack">
 
         <div
-        class="envelope"
-        id="envelope">
+        id="sliderThumb"
+        class="sliderThumb">
 
-            <!-- Flap -->
-
-            <div class="envelope-flap"></div>
-
-            <!-- Letter -->
-
-            <div
-            class="letter"
-            id="letter">
-
-                Dear Pallavi,
-
-                <br>
-
-                This one's for you. 🌸
-
-            </div>
-
-            <!-- Base -->
-
-            <div class="envelope-base"></div>
-
-            <!-- Heart Seal -->
-
-            <div
-            class="heart-seal"
-            id="heartSeal">
-
-                ❤️
-
-            </div>
+            ➜
 
         </div>
 
-        <p
-        id="envelopeHint"
-        style="
-        margin-top:10px;
-        color:var(--wine);
-        font-weight:500;
-        min-height:24px;">
+        <span>
 
-            Tap the heart...
+            Swipe to Unlock
 
-        </p>
+        </span>
 
     </div>
 
-</section>
+</div>
+
+    </section>
+
+    <!-- PIN Screen -->
+
+    <section
+id="pinScreen"
+class="screen hidden">
+
+<div class="pinCard glass">
+
+    <div
+    id="pinLock"
+    class="pinLock">
+
+        🔐
+
+    </div>
+
+    <h2 class="pinTitle">
+
+        Enter Your Birthday
+
+    </h2>
+
+    <p class="pinText">
+
+        Only the birthday girl knows the password.
+
+        <br>
+
+        Hint: DDMMYYYY 🎂
+
+    </p>
+
+    <!-- PIN DOTS -->
+
+    <div
+    id="pinDots"
+    class="pinDots">
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+
+    <div
+    id="pinMessage"
+    class="pinMessage">
+
+        Only Pallavi may enter 💕
+
+    </div>
+
+    <!-- KEYPAD -->
+
+    <div class="keypad">
+
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+
+        <button
+        class="key empty">
+
+        </button>
+
+        <button
+        class="key"
+        data-key="0">
+
+            0
+
+        </button>
+
+        <button
+        class="key"
+        id="backspace">
+
+            ⌫
+
+        </button>
+
+    </div>
+
+</div>
+
+    </section>
+
+    </section>
+
+    <!-- Authentication -->
+
+    <section
+    id="authScreen"
+    class="screen hidden">
+
+    </section>
+
+    <!-- Envelope -->
+
+    <section
+    id="envelopeScreen"
+    class="screen hidden">
+
+    </section>
+
+    <!-- Letter -->
+
+    <section
+    id="letterScreen"
+    class="screen hidden">
+
+    </section>
+
+    <!-- Memories -->
+
+    <section
+    id="memoryScreen"
+    class="screen hidden">
+
+    </section>
+
+    <!-- Final Surprise -->
+
+    <section
+    id="finalScreen"
+    class="screen hidden">
+
+    </section>
+
+</main>
+
+<!-- ==========================================
+     Music
+========================================== -->
+
+<audio
+id="bgMusic"
+loop>
+
+<source
+src="music.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!-- ==========================================
+     Sounds
+========================================== -->
+
+<audio id="unlockSound">
+<source src="unlock.mp3"
+type="audio/mpeg">
+</audio>
+
+<audio id="paperSound">
+<source src="paper.mp3"
+type="audio/mpeg">
+</audio>
+
+<audio id="clickSound">
+<source src="click.mp3"
+type="audio/mpeg">
+</audio>
+
+<audio id="confettiSound">
+<source src="celebrate.mp3"
+type="audio/mpeg">
+</audio>
 
 <script>
+
 /* ==========================================
-   MODULE 1C-1
-   LIVE CLOCK + PETALS + SWIPE + PIN INPUT
+   CHUNK 3 STARTS HERE
+========================================== */
+/* ==========================================
+   CHUNK 3
+   BACKGROUND ENGINE
 ========================================== */
 
-const CORRECT_PIN = "08072008";
+const background =
+document.getElementById("background");
 
-let enteredPin = "";
+/* ---------- BLOBS ---------- */
 
-/* ---------- ELEMENTS ---------- */
+background.innerHTML = `
 
-const lockScreen = document.getElementById("lockScreen");
-const pinScreen = document.getElementById("pinScreen");
+<div class="blob blob1"></div>
 
-const swipeThumb = document.getElementById("swipeThumb");
-const swipeBox = document.getElementById("swipeBox");
+<div class="blob blob2"></div>
 
-const pinDots = document.querySelectorAll(".dot");
-const pinMessage = document.getElementById("pinMessage");
+<div class="blob blob3"></div>
 
-const authScreen = document.getElementById("authScreen");
+<div class="backgroundGlow"></div>
 
-const keypadButtons = document.querySelectorAll(".key[data-key]");
+<div id="petals"></div>
 
-const backspace = document.getElementById("backspace");
+`;
 
-/* ---------- LIVE CLOCK ---------- */
+/* ---------- PETALS ---------- */
 
-function updateClock(){
-
-const now = new Date();
-
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-hours = hours < 10 ? "0"+hours : hours;
-minutes = minutes < 10 ? "0"+minutes : minutes;
-
-document.getElementById("time").textContent =
-hours + ":" + minutes;
-
-const options = {
-
-weekday:"long",
-
-day:"numeric",
-
-month:"long"
-
-};
-
-document.getElementById("date").textContent =
-now.toLocaleDateString("en-US",options);
-
-}
-
-updateClock();
-
-setInterval(updateClock,1000);
-
-/* ---------- FALLING FLOWERS ---------- */
-
-const petalsContainer =
+const petals =
 document.getElementById("petals");
 
-const flowers = [
+const flowerList = [
 
 "🌸",
+
 "🤍",
+
 "💮"
 
 ];
@@ -1469,23 +1457,29 @@ function createPetal(){
 const petal =
 document.createElement("div");
 
-petal.className = "petal";
+petal.className="petal";
 
-petal.innerHTML =
-flowers[
-Math.floor(Math.random()*flowers.length)
+petal.innerHTML=
+
+flowerList[
+Math.floor(
+Math.random()*flowerList.length
+)
 ];
 
-petal.style.left =
-Math.random()*100 + "vw";
+petal.style.left=
 
-petal.style.fontSize =
-(18 + Math.random()*12) + "px";
+Math.random()*100+"vw";
 
-petal.style.animationDuration =
-(6 + Math.random()*6) + "s";
+petal.style.fontSize=
 
-petalsContainer.appendChild(petal);
+(18+Math.random()*12)+"px";
+
+petal.style.animationDuration=
+
+(6+Math.random()*6)+"s";
+
+petals.appendChild(petal);
 
 setTimeout(()=>{
 
@@ -1495,638 +1489,210 @@ petal.remove();
 
 }
 
-setInterval(createPetal,500);
+/* Spawn petals */
 
-/* ---------- SWIPE ---------- */
+setInterval(
 
-let unlocked = false;
+createPetal,
 
-swipeBox.addEventListener("click",()=>{
+450
 
-if(unlocked) return;
+);
 
-unlocked = true;
-
-swipeThumb.style.left = "160px";
-
-setTimeout(()=>{
-
-lockScreen.classList.add("fade-out");
-
-setTimeout(()=>{
-
-lockScreen.style.display = "none";
-
-pinScreen.classList.remove("hidden");
-
-pinScreen.style.display = "flex";
-
-},650);
-
-},350);
-
-});
-
-/* ---------- PIN DOTS ---------- */
-
-function updateDots(){
-
-pinDots.forEach((dot,index)=>{
-
-if(index < enteredPin.length){
-
-dot.classList.add("active");
-
-}else{
-
-dot.classList.remove("active");
-
-}
-
-});
-
-}
-
-/* ---------- KEYPAD ---------- */
-
-keypadButtons.forEach(button=>{
-
-button.addEventListener("click",()=>{
-
-if(enteredPin.length >= 8) return;
-
-enteredPin += button.dataset.key;
-
-updateDots();
-
-if(enteredPin.length === 8){
-
-setTimeout(checkPin,250);
-
-}
-
-});
-
-});
-
-/* ---------- BACKSPACE ---------- */
-
-backspace.addEventListener("click",()=>{
-
-enteredPin =
-enteredPin.slice(0,-1);
-
-updateDots();
-
-});
-  /* ==========================================
-   MODULE 1C-2
-   PIN CHECK • AUTHENTICATION • TRANSITION
+/* ==========================================
+   CHUNK 5A
+   LIVE CLOCK
 ========================================== */
 
-const funnyMessages = [
+const liveTime =
+document.getElementById("liveTime");
 
-"That's not your birthday, pretty girl 🤨",
+const liveDate =
+document.getElementById("liveDate");
 
-"Hint: It's a very special day... 🎂",
+function updateClock(){
 
-"Nope... try again 🌷",
+const now = new Date();
 
-"Are you secretly testing me? 😭",
+const time = now.toLocaleTimeString(
+[],
+{
+hour:"2-digit",
+minute:"2-digit",
+hour12:false
+}
+);
 
-"Only Pallavi can unlock this little world 💌",
+const date = now.toLocaleDateString(
+"en-US",
+{
+weekday:"long",
+day:"numeric",
+month:"long"
+}
+);
 
-"So close... or maybe not 😂"
+liveTime.textContent = time;
 
-];
+liveDate.textContent = date;
 
-/* ---------- CHECK PIN ---------- */
+}
 
-function checkPin(){
+updateClock();
 
-if(enteredPin === CORRECT_PIN){
+setInterval(updateClock,1000);
 
-pinMessage.innerHTML =
-"Welcome, birthday girl! 🌸";
+   /* ==========================================
+   CHUNK 5B
+   DRAG VARIABLES
+========================================== */
 
-document.getElementById("pinLock").innerHTML = "🔓";
+const slider =
+document.getElementById("sliderThumb");
 
-setTimeout(()=>{
+const track =
+document.getElementById("sliderTrack");
 
-pinScreen.classList.add("fade-out");
+const lockScreen =
+document.getElementById("lockScreen");
 
-authScreen.classList.add("show");
+let dragging = false;
 
-setTimeout(()=>{
+let startX = 0;
 
-authScreen.classList.remove("show");
+let currentX = 0;
 
-/*
-==========================================
-MODULE 2 STARTS HERE
-==========================================
+let maxX = 0;
 
-For now we'll simply show an alert.
-Later this will open the envelope.
-*/
+function vibrate(){
 
-alert("🎉 Module 1 Complete!\n\nNext: The Envelope 💌");
+if(navigator.vibrate){
 
-/* Hide authentication */
-
-authScreen.style.display="none";
-
-},2200);
-
-},700);
-
-}else{
-
-document.querySelector(".pin-card")
-.classList.add("shake");
-
-pinMessage.innerHTML =
-funnyMessages[
-Math.floor(Math.random()*funnyMessages.length)
-];
-
-enteredPin = "";
-
-updateDots();
-
-setTimeout(()=>{
-
-document.querySelector(".pin-card")
-.classList.remove("shake");
-
-},500);
+navigator.vibrate(12);
 
 }
 
 }
 
-/* ---------- KEYBOARD SUPPORT ---------- */
 
-document.addEventListener("keydown",(e)=>{
+   /* ==========================================
+   CHUNK 5C
+   DRAG START
+========================================== */
 
-if(pinScreen.style.display!=="flex") return;
+slider.addEventListener("pointerdown",(e)=>{
 
-if(e.key>="0" && e.key<="9"){
+dragging = true;
 
-if(enteredPin.length<8){
+slider.setPointerCapture(
+e.pointerId
+);
 
-enteredPin+=e.key;
+startX = e.clientX;
 
-updateDots();
+maxX =
 
-if(enteredPin.length===8){
+track.clientWidth -
 
-setTimeout(checkPin,250);
+slider.clientWidth -
 
-}
+16;
 
-}
-
-}
-
-if(e.key==="Backspace"){
-
-enteredPin=enteredPin.slice(0,-1);
-
-updateDots();
-
-}
+slider.style.transition="none";
 
 });
 
-/* ---------- PREVENT DRAG ---------- */
+/* ---------- MOVE ---------- */
 
-document.addEventListener("dragstart",(e)=>{
+slider.addEventListener("pointermove",(e)=>{
 
-e.preventDefault();
+if(!dragging) return;
+
+currentX =
+
+e.clientX-startX;
+
+if(currentX<0){
+
+currentX=0;
+
+}
+
+if(currentX>maxX){
+
+currentX=maxX;
+
+}
+
+slider.style.left=
+
+currentX+8+"px";
 
 });
 
-/* ---------- PREVENT DOUBLE TAP ZOOM ---------- */
+/* ---------- END ---------- */
 
-let lastTouchEnd = 0;
+slider.addEventListener("pointerup",()=>{
 
-document.addEventListener("touchend",(event)=>{
-
-const now = new Date().getTime();
-
-if(now-lastTouchEnd<=300){
-
-event.preventDefault();
-
-}
-
-lastTouchEnd=now;
-
-},{passive:false});  
-
-   /* =====================================================
-   MODULE 2
-   ENVELOPE SCREEN
-===================================================== */
-
-.envelope-screen{
-
-position:fixed;
-
-inset:0;
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-padding:20px;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(14px);
-
--webkit-backdrop-filter:blur(14px);
-
-z-index:50;
-
-animation:fadeUp .8s ease;
-
-}
-
-.envelope-container{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-gap:35px;
-
-}
-
-.envelope{
-
-position:relative;
-
-width:280px;
-
-height:180px;
-
-cursor:pointer;
-
-transition:.5s ease;
-
-}
-
-.envelope:hover{
-
-transform:translateY(-8px);
-
-}
-
-/* Body */
-
-.envelope-base{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-
-height:120px;
-
-background:#F2AFBC;
-
-border-radius:0 0 18px 18px;
-
-box-shadow:
-
-0 18px 35px rgba(0,0,0,.12);
-
-}
-
-/* Top Flap */
-
-.envelope-flap{
-
-position:absolute;
-
-top:0;
-
-width:100%;
-
-height:100px;
-
-background:#F9CBD6;
-
-clip-path:polygon(0 0,100% 0,50% 100%);
-
-transform-origin:top;
-
-transition:1s;
-
-z-index:4;
-
-}
-
-/* Letter */
-
-.letter{
-
-position:absolute;
-
-left:50%;
-
-bottom:30px;
-
-transform:translateX(-50%);
-
-width:220px;
-
-height:135px;
-
-background:#FFFDF8;
-
-border-radius:10px;
-
-padding:18px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-font-family:"Caveat",cursive;
-
-font-size:24px;
-
-color:var(--wine);
-
-box-shadow:
-
-0 8px 20px rgba(0,0,0,.10);
-
-transition:1s;
-
-z-index:2;
-
-}
-
-/* Heart Seal */
-
-.heart-seal{
-
-position:absolute;
-
-left:50%;
-
-top:82px;
-
-transform:translate(-50%,-50%);
-
-width:52px;
-
-height:52px;
-
-border-radius:50%;
-
-background:white;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:24px;
-
-box-shadow:
-
-0 8px 18px rgba(0,0,0,.15);
-
-z-index:10;
-
-animation:heartbeat 1.6s infinite;
-
-cursor:pointer;
-
-}
-
-@keyframes heartbeat{
-
-0%,100%{
-
-transform:translate(-50%,-50%) scale(1);
-
-}
-
-50%{
-
-transform:translate(-50%,-50%) scale(1.12);
-
-}
-
-}
-
-/* Open Animation */
-
-.envelope.open .envelope-flap{
-
-transform:rotateX(180deg);
-
-}
-
-.envelope.open .letter{
-
-bottom:95px;
-
-}
-
-/* Text */
-
-.envelope-title{
-
-font-family:"Cormorant Garamond",serif;
-
-font-size:42px;
-
-color:var(--wine);
-
-}
-
-.envelope-subtitle{
-
-font-size:16px;
-
-color:var(--text);
-
-text-align:center;
-
-line-height:1.8;
-
-max-width:320px;
-
-}
-
-/* Mobile */
-
-@media(max-width:480px){
-
-.envelope{
-
-width:240px;
-
-height:160px;
-
-}
-
-.envelope-base{
-
-height:105px;
-
-}
-
-.letter{
-
-width:190px;
-
-height:120px;
-
-font-size:21px;
-
-}
-
-.envelope-title{
-
-font-size:36px;
-
-}
-
-   }
-
-
-
-   
-/* =====================================================
-   MODULE 2C
-   ENVELOPE LOGIC + TRANSITION FROM MODULE 1
-===================================================== */
-
-/* ---------- UPDATE checkPin IN MODULE 1 ---------- */
-/* Replace ONLY the success part inside checkPin() */
-
-/*
-OLD LINE (remove this):
-alert("🎉 Module 1 Complete!\n\nNext: The Envelope 💌");
-*/
-
-/* NEW SUCCESS FLOW */
-
-function goToEnvelope(){
-
-    setTimeout(()=>{
-
-        authScreen.classList.remove("show");
-
-        authScreen.style.display = "none";
-
-        pinScreen.classList.add("fade-out");
-
-        setTimeout(()=>{
-
-            pinScreen.style.display = "none";
-
-            document.getElementById("envelopeScreen")
-            .style.display = "flex";
-
-        },600);
-
-    },1200);
-
-}
-
-/* ---------- ENVELOPE INTERACTION ---------- */
-
-const envelope = document.getElementById("envelope");
-const heartSeal = document.getElementById("heartSeal");
-const envelopeHint = document.getElementById("envelopeHint");
-
-let envelopeOpened = false;
-
-heartSeal.addEventListener("click",()=>{
-
-    if(envelopeOpened) return;
-
-    envelopeOpened = true;
-
-    envelope.classList.add("open");
-
-    envelopeHint.innerHTML = "Opening your letter... 💌";
-
-    setTimeout(()=>{
-
-        envelopeHint.innerHTML = "A letter written just for you... 🌸";
-
-    },1200);
-
-    setTimeout(()=>{
-
-        // Transition to Chapter 1 (Module 3 placeholder)
-
-        document.getElementById("envelopeScreen")
-        .style.opacity = "0";
-
-        setTimeout(()=>{
-
-            document.getElementById("envelopeScreen")
-            .style.display = "none";
-
-            alert("📖 Next: Chapter One begins...");
-
-        },700);
-
-    },2600);
+dragging=false;
 
 });
 
-/* ---------- MODIFIED PIN SUCCESS (HOOK) ---------- */
+   /* ==========================================
+   CHUNK 5E
+   UNLOCK
+========================================== */
 
-/* FIND THIS PART IN checkPin():
-if(enteredPin === CORRECT_PIN)
-AND REPLACE ONLY THE SUCCESS BLOCK WITH THIS: */
+function unlock(){
 
-function pinSuccess(){
+vibrate();
 
-    pinMessage.innerHTML = "Welcome, birthday girl 🌸";
+const sound =
 
-    document.getElementById("pinLock").innerHTML = "🔓";
+document.getElementById(
+"unlockSound"
+);
 
-    authScreen.classList.add("show");
+if(sound){
 
-    setTimeout(()=>{
+sound.currentTime=0;
 
-        goToEnvelope();
-
-    },2000);
+sound.play().catch(()=>{});
 
 }
-   
 
+document.getElementById(
+"lockIcon"
+).textContent="🔓";
 
+lockScreen.style.transition=
 
-    </script>
+".8s ease";
+
+lockScreen.style.opacity="0";
+
+lockScreen.style.transform=
+
+"scale(1.04)";
+
+setTimeout(()=>{
+
+lockScreen.classList.add(
+"hidden"
+);
+
+document.getElementById(
+"pinScreen"
+).classList.remove(
+"hidden"
+);
+
+},800);
+
+}
+
+</script>
 
 </body>
 
 </html>
-    
