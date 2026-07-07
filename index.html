@@ -1519,6 +1519,65 @@ transition:.35s;
 transform:translateY(-4px);
 
 }
+
+/* ==========================================
+   LETTER BODY
+========================================== */
+
+.letterBody{
+
+max-height:60vh;
+
+overflow-y:auto;
+
+padding-right:10px;
+
+text-align:left;
+
+line-height:2;
+
+font-size:18px;
+
+}
+
+.letterBody p{
+
+margin-bottom:28px;
+
+}
+
+.signature{
+
+margin-top:40px;
+
+font-family:"Caveat",cursive;
+
+font-size:34px;
+
+color:var(--wine);
+
+text-align:right;
+
+}
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(25px);
+
+transition:.8s;
+
+}
+
+.reveal.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
    
 </style>
 
@@ -1892,6 +1951,64 @@ class="screen hidden">
     </div>
 
     <div class="paperContent">
+
+<h2 class="letterHeading">
+
+Dear You,
+
+</h2>
+
+<div id="letterBody" class="letterBody">
+
+<p class="reveal">
+I remember we once talked about handwritten letters. 💌
+</p>
+
+<p class="reveal">
+Since I couldn't be there to hand you one today, I thought I'd do the next best thing.
+</p>
+
+<p class="reveal">
+Words have always been my way of saying the things I don't always say out loud, so I hope this little note reaches you the way a handwritten letter would.
+</p>
+
+<p class="reveal">
+Dear you,
+</p>
+
+<p class="reveal">
+Happy 18th Birthday. 🤍
+</p>
+
+<p class="reveal">
+Eighteen. That's such a strange and beautiful age. You're standing between everything you've known and everything that's waiting for you.
+</p>
+
+<p class="reveal">
+It's exciting... a little scary... and somehow magical all at once.
+</p>
+
+<p class="reveal">
+(Your complete birthday letter will continue here...)
+</p>
+
+<div class="signature reveal">
+
+— Pranjal 🤍
+
+</div>
+
+<button
+id="nextChapter"
+class="readButton">
+
+Turn the Page →
+
+</button>
+
+</div>
+
+    </div>
 
         <h2 class="letterHeading">
 
@@ -2339,6 +2456,37 @@ heartSeal.addEventListener("click", () => {
 
 });
 
+
+/* ==========================================
+   LETTER ANIMATION
+========================================== */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:.2
+});
+
+reveals.forEach(item=>{
+
+observer.observe(item);
+
+});
+   
 </script>
 
 </body>
