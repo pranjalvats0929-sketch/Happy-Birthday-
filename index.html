@@ -173,6 +173,34 @@
     background:#e9d8fd;
 }
 
+.live-clock{
+
+margin-bottom:35px;
+
+text-align:center;
+
+}
+
+.live-clock h2{
+
+font-size:1.2rem;
+
+color:var(--purple);
+
+margin-bottom:10px;
+
+}
+
+#liveClock{
+
+font-size:3rem;
+
+font-weight:700;
+
+color:var(--text);
+
+}
+        
     /* =====================================================
             SECTION 2 CSS
             LIVE COUNTDOWN
@@ -1011,6 +1039,14 @@ font-size:2rem;
                 LIVE COUNTDOWN
 ====================================================== -->
 
+<div class="live-clock">
+
+<h2>Current Time</h2>
+
+<h1 id="liveClock">00:00:00</h1>
+
+</div>
+    
 <section id="countdown" style="display:none;">
 
     <div class="card countdown-card">
@@ -1509,10 +1545,21 @@ beginBtn.addEventListener("click", () => {
 });
 
 /* =====================================================
-                SECTION 4 JS
-                LETTER
+                
+                countdown JS
 ====================================================== */
+function updateClock(){
 
+const now=new Date();
+
+document.getElementById("liveClock").innerHTML=
+now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
 /* =====================================================
         SECTION 4 JS
         LETTER
