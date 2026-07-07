@@ -1147,7 +1147,7 @@ transform-origin:top;
 
 transition:1s;
 
-z-index:5;
+z-index:6;
 
 }
 
@@ -1157,7 +1157,7 @@ position:absolute;
 
 left:50%;
 
-bottom:25px;
+bottom:-20px;
 
 transform:translateX(-50%);
 
@@ -1195,7 +1195,7 @@ box-shadow:
 
 transition:1s;
 
-z-index:2;
+z-index:1;
 
 }
 
@@ -1969,7 +1969,75 @@ function checkPin(){
 
 }
 
+/* ==========================================
+   MODULE 3B
+   ENVELOPE OPENING
+========================================== */
 
+const envelope = document.getElementById("envelope");
+const heartSeal = document.getElementById("heartSeal");
+const letterCard = document.getElementById("letterCard");
+const envelopeHint = document.getElementById("envelopeHint");
+
+let envelopeOpened = false;
+
+heartSeal.addEventListener("click", () => {
+
+    if (envelopeOpened) return;
+
+    envelopeOpened = true;
+
+    if (navigator.vibrate) {
+        navigator.vibrate(20);
+    }
+
+    envelopeHint.innerHTML = "Opening your letter... 💌";
+
+    heartSeal.style.pointerEvents = "none";
+
+    /* Open flap */
+    document.querySelector(".flap").style.transform =
+    "rotateX(180deg)";
+
+    /* Pull letter out */
+    setTimeout(() => {
+
+        letterCard.style.bottom = "105px";
+        letterCard.style.transform =
+        "translateX(-50%) scale(1.03)";
+
+    }, 450);
+
+    /* Change hint */
+    setTimeout(() => {
+
+        envelopeHint.innerHTML =
+        "A handwritten letter, just for you. 🤍";
+
+    }, 1200);
+
+    /* Move to full letter screen */
+    setTimeout(() => {
+
+        document.getElementById("envelopeScreen")
+        .style.opacity = "0";
+
+        document.getElementById("envelopeScreen")
+        .style.transition = ".8s ease";
+
+        setTimeout(() => {
+
+            document.getElementById("envelopeScreen")
+            .classList.add("hidden");
+
+            document.getElementById("letterScreen")
+            .classList.remove("hidden");
+
+        }, 800);
+
+    }, 2800);
+
+});
    
 </script>
 
